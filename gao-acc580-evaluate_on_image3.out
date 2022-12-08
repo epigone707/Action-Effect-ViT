@@ -1,0 +1,98 @@
+~/proj ~/proj
+Package                  Version
+------------------------ ------------
+aiohttp                  3.8.3
+aiosignal                1.3.1
+async-timeout            4.0.2
+attrs                    21.4.0
+certifi                  2022.9.24
+charset-normalizer       2.1.1
+datasets                 2.7.1
+dill                     0.3.6
+distlib                  0.3.4
+evaluate                 0.3.0
+filelock                 3.6.0
+frozenlist               1.3.3
+fsspec                   2022.11.0
+huggingface-hub          0.11.1
+hypothesis               6.43.1
+idna                     3.4
+iniconfig                1.1.1
+joblib                   1.2.0
+multidict                6.0.2
+multiprocess             0.70.14
+numpy                    1.23.5
+nvidia-cublas-cu11       11.10.3.66
+nvidia-cuda-nvrtc-cu11   11.7.99
+nvidia-cuda-runtime-cu11 11.7.99
+nvidia-cudnn-cu11        8.5.0.96
+packaging                21.3
+pandas                   1.5.2
+Pillow                   9.3.0
+pip                      22.0.4
+platformdirs             2.5.1
+pluggy                   1.0.0
+py                       1.11.0
+pyarrow                  10.0.1
+pyparsing                3.0.8
+pytest                   7.1.1
+python-dateutil          2.8.2
+pytz                     2022.6
+PyYAML                   6.0
+regex                    2022.10.31
+requests                 2.28.1
+responses                0.18.0
+scikit-learn             1.1.3
+scipy                    1.9.3
+setuptools               58.1.0
+six                      1.16.0
+sortedcontainers         2.4.0
+threadpoolctl            3.1.0
+tokenizers               0.13.2
+tomli                    2.0.1
+torch                    1.13.0+cu116
+torchaudio               0.13.0+cu116
+torchvision              0.14.0+cu116
+tqdm                     4.64.1
+transformers             4.24.0
+typing_extensions        4.4.0
+urllib3                  1.26.13
+virtualenv               20.14.1
+wheel                    0.38.4
+xxhash                   3.1.0
+yarl                     1.8.1
+WARNING: You are using pip version 22.0.4; however, version 22.3.1 is available.
+You should consider upgrading via the '/sw/pkgs/arc/python/3.9.12/bin/python3.9 -m pip install --upgrade pip' command.
+/sw/pkgs/arc/python/3.9.12/bin/python3
+Downloading readme:   0%|          | 0.00/4.05k [00:00<?, ?B/s]Downloading readme: 100%|██████████| 4.05k/4.05k [00:00<00:00, 3.89MB/s]
+Using custom data configuration Steven0633--image3-ddf859ee9194fe37
+Downloading and preparing dataset None/None to /home/yanfuguo/.cache/huggingface/datasets/Steven0633___parquet/Steven0633--image3-ddf859ee9194fe37/0.0.0/2a3b91fbd88a2c90d1dbbb32b460cf621d31bd5b05b934492fdef7d8d6f236ec...
+Downloading data files:   0%|          | 0/2 [00:00<?, ?it/s]
+Downloading data:   0%|          | 0.00/12.6M [00:00<?, ?B/s][A
+Downloading data:  16%|█▌        | 1.98M/12.6M [00:00<00:00, 19.8MB/s][A
+Downloading data:  49%|████▉     | 6.17M/12.6M [00:00<00:00, 32.8MB/s][ADownloading data: 100%|██████████| 12.6M/12.6M [00:00<00:00, 42.4MB/s]
+Downloading data files:  50%|█████     | 1/2 [00:01<00:01,  1.02s/it]
+Downloading data:   0%|          | 0.00/1.38M [00:00<?, ?B/s][A
+Downloading data:  92%|█████████▏| 1.27M/1.38M [00:00<00:00, 12.5MB/s][ADownloading data: 100%|██████████| 1.38M/1.38M [00:00<00:00, 12.9MB/s]
+Downloading data files: 100%|██████████| 2/2 [00:01<00:00,  1.24it/s]Downloading data files: 100%|██████████| 2/2 [00:01<00:00,  1.19it/s]
+Extracting data files #0:   0%|          | 0/1 [00:00<?, ?obj/s]
+Extracting data files #1:   0%|          | 0/1 [00:00<?, ?obj/s][AExtracting data files #0: 100%|██████████| 1/1 [00:00<00:00, 155.46obj/s]
+Extracting data files #1: 100%|██████████| 1/1 [00:00<00:00, 79.97obj/s]
+Generating train split:   0%|          | 0/378 [00:00<?, ? examples/s]                                                                      Generating test split:   0%|          | 0/42 [00:00<?, ? examples/s]                                                                    Dataset parquet downloaded and prepared to /home/yanfuguo/.cache/huggingface/datasets/Steven0633___parquet/Steven0633--image3-ddf859ee9194fe37/0.0.0/2a3b91fbd88a2c90d1dbbb32b460cf621d31bd5b05b934492fdef7d8d6f236ec. Subsequent calls will reuse this data.
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 232.36it/s]
+Using custom data configuration Steven0633--image3-ddf859ee9194fe37
+/home/yanfuguo/.local/lib/python3.9/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3190.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+***** Running Evaluation *****
+  Num examples = 42
+  Batch size = 64
+evaluate 595-finetuned-task-acc580/checkpoint-182 on dataset Steven0633/image3
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 39.60it/s]
+***** eval metrics *****
+  eval_accuracy           =     0.3571
+  eval_loss               =     2.7007
+  eval_runtime            = 0:00:02.84
+  eval_samples_per_second =     14.738
+  eval_steps_per_second   =      0.351
+  eval_top-20-accuracy    =     0.8571
+  eval_top-5-accuracy     =     0.6429

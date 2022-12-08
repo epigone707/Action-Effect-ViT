@@ -1,0 +1,2764 @@
+~/proj ~/proj
+Package                  Version
+------------------------ ------------
+aiohttp                  3.8.3
+aiosignal                1.3.1
+async-timeout            4.0.2
+attrs                    21.4.0
+certifi                  2022.9.24
+charset-normalizer       2.1.1
+datasets                 2.7.1
+dill                     0.3.6
+distlib                  0.3.4
+evaluate                 0.3.0
+filelock                 3.6.0
+frozenlist               1.3.3
+fsspec                   2022.11.0
+huggingface-hub          0.11.1
+hypothesis               6.43.1
+idna                     3.4
+iniconfig                1.1.1
+joblib                   1.2.0
+multidict                6.0.2
+multiprocess             0.70.14
+numpy                    1.23.5
+nvidia-cublas-cu11       11.10.3.66
+nvidia-cuda-nvrtc-cu11   11.7.99
+nvidia-cuda-runtime-cu11 11.7.99
+nvidia-cudnn-cu11        8.5.0.96
+packaging                21.3
+pandas                   1.5.2
+Pillow                   9.3.0
+pip                      22.0.4
+platformdirs             2.5.1
+pluggy                   1.0.0
+py                       1.11.0
+pyarrow                  10.0.1
+pyparsing                3.0.8
+pytest                   7.1.1
+python-dateutil          2.8.2
+pytz                     2022.6
+PyYAML                   6.0
+regex                    2022.10.31
+requests                 2.28.1
+responses                0.18.0
+scikit-learn             1.1.3
+scipy                    1.9.3
+setuptools               58.1.0
+six                      1.16.0
+sortedcontainers         2.4.0
+threadpoolctl            3.1.0
+tokenizers               0.13.2
+tomli                    2.0.1
+torch                    1.13.0+cu116
+torchaudio               0.13.0+cu116
+torchvision              0.14.0+cu116
+tqdm                     4.64.1
+transformers             4.24.0
+typing_extensions        4.4.0
+urllib3                  1.26.13
+virtualenv               20.14.1
+wheel                    0.38.4
+xxhash                   3.1.0
+yarl                     1.8.1
+WARNING: You are using pip version 22.0.4; however, version 22.3.1 is available.
+You should consider upgrading via the '/sw/pkgs/arc/python/3.9.12/bin/python3.9 -m pip install --upgrade pip' command.
+/sw/pkgs/arc/python/3.9.12/bin/python3
+
+Resolving data files:   0%|          | 0/2048 [00:00<?, ?it/s]
+Resolving data files: 100%|██████████| 2048/2048 [00:00<00:00, 32980.62it/s]
+Using custom data configuration default-20565852d37b33bd
+Found cached dataset imagefolder (/home/yanfuguo/.cache/huggingface/datasets/imagefolder/default-20565852d37b33bd/0.0.0/37fbb85cc714a338bea574ac6c7d0b5be5aff46c1862c1989b20e0771199e93f)
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 1/1 [00:00<00:00,  8.68it/s]
+100%|██████████| 1/1 [00:00<00:00,  8.66it/s]
+/home/yanfuguo/.local/lib/python3.9/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3190.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+Some weights of SwinForImageClassification were not initialized from the model checkpoint at microsoft/swin-tiny-patch4-window7-224 and are newly initialized because the shapes did not match:
+- classifier.weight: found shape torch.Size([1000, 768]) in the checkpoint and torch.Size([140, 768]) in the model instantiated
+- classifier.bias: found shape torch.Size([1000]) in the checkpoint and torch.Size([140]) in the model instantiated
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/home/yanfuguo/.local/lib/python3.9/site-packages/transformers/optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+***** Running training *****
+  Num examples = 1843
+  Num Epochs = 50
+  Instantaneous batch size per device = 32
+  Total train batch size (w. parallel, distributed & accumulation) = 128
+  Gradient Accumulation steps = 4
+  Total optimization steps = 700
+  Number of trainable parameters = 27627014
+dataset:
+DatasetDict({
+    train: Dataset({
+        features: ['image', 'label'],
+        num_rows: 2048
+    })
+})
+{'image': Image(decode=True, id=None), 'label': ClassLabel(names=['arrange+chairs', 'arrange+flowers', 'bake+potato', 'beat+eggs', 'bend+knee', 'bend+tree', 'bind+hair', 'bite+apple', 'block+door', 'block+window', 'boil+egg', 'boil+potato', 'break+bowl', 'break+cup', 'break+door', 'break+egg', 'break+glass', 'break+window', 'burn+book', 'burn+paper', 'burn+tree', 'burn+wood', 'burst+balloon', 'burst+door', 'carry+bag', 'carry+book', 'carry+umbrella', 'chop+carrot', 'chop+meat', 'chop+onion', 'chop+tree', 'chop+wood', 'close+book', 'close+cabinet', 'close+door', 'close+drawer', 'close+window', 'coil+rope', 'cook+egg', 'cook+meat', 'cook+onion', 'cook+potato', 'crack+bottle', 'crack+egg', 'crack+glass', 'crack+window', 'crash+car', 'crop+hair', 'cut+apple', 'cut+meat', 'cut+onion', 'cut+potato', 'cut+tree', 'cut+wood', 'fasten+door', 'fasten+window', 'fold+paper', 'fry+egg', 'fry+meat', 'fry+potato', 'grate+carrot', 'grate+potato', 'grind+meat', 'hang+bag', 'hang+shirt', 'ignite+paper', 'ignite+wood', 'insert+key', 'kick+door', 'kick+football', 'knot+rope', 'label+bottle', 'label+box', 'lock+cabinet', 'lock+door', 'lock+drawer', 'lock+window', 'mash+potato', 'mix+eggs', 'open+bottle', 'open+box', 'open+cabinet', 'open+door', 'open+drawer', 'open+umbrella', 'open+window', 'park+car', 'peel+apple', 'peel+banana', 'peel+carrot', 'peel+orange', 'peel+potato', 'pile+books', 'pile+boxes', 'pile+wood', 'pitch+baseball', 'ride+bicycle', 'rip+paper', 'roll+paper', 'roll+umbrella', 'saw+tree', 'saw+wood', 'scratch+car', 'scratch+knee', 'shave+hair', 'shut+door', 'shut+window', 'skin+knee', 'slice+apple', 'slice+meat', 'slice+onion', 'slice+potato', 'smash+door', 'smash+window', 'soak+hair', 'soak+shirt', 'spill+coffee', 'split+tree', 'split+wood', 'squeeze+bottle', 'squeeze+orange', 'stain+paper', 'stain+shirt', 'stir+coffee', 'stir+soup', 'strip+tree', 'tear+book', 'tear+paper', 'tear+shirt', 'throw+apple', 'throw+baseball', 'throw+football', 'throw+frisbee', 'tie+shoe', 'trim+hair', 'trim+tree', 'twist+hair', 'twist+rope', 'wrap+book', 'wrap+box'], id=None)}
+train_ds[0]:
+{'image': <PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=448x448 at 0x1464CC15F760>, 'label': 51, 'pixel_values': tensor([[[ 2.1975,  2.1975,  2.1975,  ...,  2.1462,  2.1462,  2.1462],
+         [ 2.1975,  2.1975,  2.1975,  ...,  2.1462,  2.1462,  2.1462],
+         [ 2.1975,  2.1975,  2.1975,  ...,  2.1462,  2.1462,  2.1462],
+         ...,
+         [ 1.3242,  1.5125,  1.7180,  ...,  1.9064,  1.9064,  1.9064],
+         [ 1.3413,  1.4612,  1.7009,  ...,  1.9235,  1.9235,  1.9064],
+         [ 1.1872,  1.3070,  1.5982,  ...,  1.9235,  1.9235,  1.9235]],
+
+        [[ 2.3761,  2.3761,  2.3761,  ...,  2.3235,  2.3235,  2.3235],
+         [ 2.3761,  2.3761,  2.3761,  ...,  2.3235,  2.3235,  2.3235],
+         [ 2.3761,  2.3761,  2.3761,  ...,  2.3235,  2.3235,  2.3235],
+         ...,
+         [ 0.5028,  0.6954,  0.9230,  ...,  1.4657,  1.4657,  1.4657],
+         [ 0.5203,  0.6429,  0.9055,  ...,  1.4832,  1.4832,  1.4657],
+         [ 0.3627,  0.4678,  0.7654,  ...,  1.4832,  1.4832,  1.4832]],
+
+        [[ 2.5877,  2.5877,  2.5877,  ...,  2.5354,  2.5354,  2.5354],
+         [ 2.5877,  2.5877,  2.5877,  ...,  2.5354,  2.5354,  2.5354],
+         [ 2.5877,  2.5877,  2.5877,  ...,  2.5354,  2.5354,  2.5354],
+         ...,
+         [-0.7238, -0.4624, -0.1835,  ...,  0.2696,  0.2696,  0.2696],
+         [-0.7064, -0.5321, -0.2010,  ...,  0.2871,  0.2871,  0.2696],
+         [-0.8633, -0.6890, -0.3404,  ...,  0.2871,  0.2871,  0.2871]]])}
+
+  0%|          | 0/700 [00:00<?, ?it/s]
+  0%|          | 1/700 [00:05<1:09:19,  5.95s/it]
+  0%|          | 2/700 [00:07<38:20,  3.30s/it]  
+  0%|          | 3/700 [00:08<28:01,  2.41s/it]
+  1%|          | 4/700 [00:10<23:35,  2.03s/it]
+  1%|          | 5/700 [00:11<20:36,  1.78s/it]
+  1%|          | 6/700 [00:13<19:28,  1.68s/it]
+  1%|          | 7/700 [00:14<18:32,  1.61s/it]
+  1%|          | 8/700 [00:15<17:56,  1.56s/it]
+  1%|▏         | 9/700 [00:17<17:34,  1.53s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+  1%|▏         | 10/700 [00:18<17:16,  1.50s/it]
+                                                
+
+  1%|▏         | 10/700 [00:18<17:16,  1.50s/it]
+  2%|▏         | 11/700 [00:20<17:00,  1.48s/it]
+  2%|▏         | 12/700 [00:21<16:56,  1.48s/it]
+  2%|▏         | 13/700 [00:23<16:37,  1.45s/it]
+  2%|▏         | 14/700 [00:24<16:14,  1.42s/it]
+  ***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'loss': 4.9817, 'learning_rate': 7.142857142857143e-06, 'epoch': 0.69}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  5.95it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  4.77it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  3.96it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  3.88it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  3.97it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  4.81it/s][A
+
+                                             
+[A
+                                                
+
+100%|██████████| 7/7 [00:01<00:00,  4.81it/s][A
+  2%|▏         | 14/700 [00:26<16:14,  1.42s/it]
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-14
+Configuration saved in 595-finetuned-task2/checkpoint-14/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-14/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-14/preprocessor_config.json
+/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+  2%|▏         | 15/700 [00:31<35:18,  3.09s/it]
+  2%|▏         | 16/700 [00:34<34:44,  3.05s/it]
+  2%|▏         | 17/700 [00:35<28:59,  2.55s/it]
+  3%|▎         | 18/700 [00:37<25:32,  2.25s/it]
+  3%|▎         | 19/700 [00:38<22:29,  1.98s/it]
+  3%|▎         | 20/700 [00:39<20:02,  1.77s/it]
+                                                
+
+  3%|▎         | 20/700 [00:39<20:02,  1.77s/it]
+  3%|▎         | 21/700 [00:41<18:53,  1.67s/it]
+  3%|▎         | 22/700 [00:42<17:52,  1.58s/it]
+  3%|▎         | 23/700 [00:44<16:47,  1.49s/it]
+  3%|▎         | 24/700 [00:45<17:36,  1.56s/it]
+  4%|▎         | 25/700 [00:47<17:28,  1.55s/it]
+  4%|▎         | 26/700 [00:48<16:55,  1.51s/it]
+  4%|▍         | 27/700 [00:49<16:09,  1.44s/it]
+  4%|▍         | 28/700 [00:51<16:41,  1.49s/it]
+  ***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 4.935331344604492, 'eval_accuracy': 0.004878048780487805, 'eval_runtime': 1.8112, 'eval_samples_per_second': 113.187, 'eval_steps_per_second': 3.865, 'epoch': 0.97}
+{'loss': 5.1654, 'learning_rate': 1.4285714285714285e-05, 'epoch': 1.41}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:01,  4.96it/s][A
+
+ 43%|████▎     | 3/7 [00:01<00:01,  2.20it/s][A
+
+ 57%|█████▋    | 4/7 [00:01<00:01,  2.53it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  2.95it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  3.37it/s][A
+
+100%|██████████| 7/7 [00:02<00:00,  4.28it/s][A
+                                                
+
+                                             
+[A
+  4%|▍         | 28/700 [00:54<16:41,  1.49s/it]
+
+100%|██████████| 7/7 [00:02<00:00,  4.28it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-28
+Configuration saved in 595-finetuned-task2/checkpoint-28/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-28/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-28/preprocessor_config.json
+
+  4%|▍         | 29/700 [00:57<32:45,  2.93s/it]
+  4%|▍         | 30/700 [00:59<27:46,  2.49s/it]
+                                                
+
+  4%|▍         | 30/700 [00:59<27:46,  2.49s/it]
+  4%|▍         | 31/700 [01:01<25:37,  2.30s/it]
+  5%|▍         | 32/700 [01:03<24:24,  2.19s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+  5%|▍         | 33/700 [01:05<23:27,  2.11s/it]
+  5%|▍         | 34/700 [01:06<22:08,  1.99s/it]
+  5%|▌         | 35/700 [01:08<19:38,  1.77s/it]
+  5%|▌         | 36/700 [01:09<18:01,  1.63s/it]
+  5%|▌         | 37/700 [01:10<16:49,  1.52s/it]
+  5%|▌         | 38/700 [01:12<18:15,  1.65s/it]
+  6%|▌         | 39/700 [01:13<16:59,  1.54s/it]
+  6%|▌         | 40/700 [01:15<17:58,  1.63s/it]
+                                                
+
+  6%|▌         | 40/700 [01:15<17:58,  1.63s/it]
+  6%|▌         | 41/700 [01:17<18:52,  1.72s/it]
+  6%|▌         | 42/700 [01:19<18:11,  1.66s/it]
+  ***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 4.853058815002441, 'eval_accuracy': 0.02926829268292683, 'eval_runtime': 2.273, 'eval_samples_per_second': 90.191, 'eval_steps_per_second': 3.08, 'epoch': 1.97}
+{'loss': 5.1027, 'learning_rate': 2.1428571428571428e-05, 'epoch': 2.14}
+{'loss': 4.742, 'learning_rate': 2.857142857142857e-05, 'epoch': 2.83}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  7.11it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.63it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.65it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.51it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.60it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.10it/s][A
+                                                
+
+                                             
+[A
+  6%|▌         | 42/700 [01:21<18:11,  1.66s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.10it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-42
+Configuration saved in 595-finetuned-task2/checkpoint-42/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-42/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-42/preprocessor_config.json
+
+  6%|▌         | 43/700 [01:25<33:45,  3.08s/it]
+  6%|▋         | 44/700 [01:27<29:29,  2.70s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+  6%|▋         | 45/700 [01:28<24:46,  2.27s/it]
+  7%|▋         | 46/700 [01:29<21:24,  1.96s/it]
+  7%|▋         | 47/700 [01:31<19:29,  1.79s/it]
+  7%|▋         | 48/700 [01:32<17:47,  1.64s/it]
+  7%|▋         | 49/700 [01:33<16:58,  1.56s/it]
+  7%|▋         | 50/700 [01:35<16:07,  1.49s/it]
+                                                
+
+  7%|▋         | 50/700 [01:35<16:07,  1.49s/it]
+  7%|▋         | 51/700 [01:36<15:37,  1.44s/it]
+  7%|▋         | 52/700 [01:37<15:05,  1.40s/it]
+  8%|▊         | 53/700 [01:39<14:36,  1.35s/it]
+  8%|▊         | 54/700 [01:40<14:10,  1.32s/it]
+  8%|▊         | 55/700 [01:41<14:24,  1.34s/it]
+  8%|▊         | 56/700 [01:43<14:18,  1.33s/it]
+  ***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 4.67283296585083, 'eval_accuracy': 0.09268292682926829, 'eval_runtime': 1.5988, 'eval_samples_per_second': 128.224, 'eval_steps_per_second': 4.378, 'epoch': 2.97}
+{'loss': 4.7393, 'learning_rate': 3.571428571428572e-05, 'epoch': 3.55}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  7.08it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.65it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.64it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.50it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.57it/s][A
+                                                
+
+                                             
+[A
+  8%|▊         | 56/700 [01:45<14:18,  1.33s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.57it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-56
+Configuration saved in 595-finetuned-task2/checkpoint-56/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-56/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-56/preprocessor_config.json
+
+  8%|▊         | 57/700 [01:48<26:21,  2.46s/it]
+  8%|▊         | 58/700 [01:49<23:01,  2.15s/it]
+  8%|▊         | 59/700 [01:50<20:12,  1.89s/it]
+  9%|▊         | 60/700 [01:53<22:26,  2.10s/it]
+                                                
+
+  9%|▊         | 60/700 [01:53<22:26,  2.10s/it]
+  9%|▊         | 61/700 [01:55<23:12,  2.18s/it]
+  9%|▉         | 62/700 [01:57<22:55,  2.16s/it]
+  9%|▉         | 63/700 [01:59<20:39,  1.95s/it]
+  9%|▉         | 64/700 [02:01<21:02,  1.99s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+  9%|▉         | 65/700 [02:03<21:19,  2.02s/it]
+  9%|▉         | 66/700 [02:05<19:34,  1.85s/it]
+ 10%|▉         | 67/700 [02:06<18:09,  1.72s/it]
+ 10%|▉         | 68/700 [02:07<16:31,  1.57s/it]
+ 10%|▉         | 69/700 [02:08<15:34,  1.48s/it]
+ 10%|█         | 70/700 [02:10<14:55,  1.42s/it]
+                                                
+
+ 10%|█         | 70/700 [02:10<14:55,  1.42s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 4.240426540374756, 'eval_accuracy': 0.2097560975609756, 'eval_runtime': 1.5506, 'eval_samples_per_second': 132.205, 'eval_steps_per_second': 4.514, 'epoch': 3.97}
+{'loss': 4.3638, 'learning_rate': 4.2857142857142856e-05, 'epoch': 4.28}
+{'loss': 3.6068, 'learning_rate': 5e-05, 'epoch': 4.97}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  5.54it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  4.98it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.37it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.36it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.50it/s][A
+                                                
+
+                                             
+[A
+ 10%|█         | 70/700 [02:12<14:55,  1.42s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.50it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-70
+Configuration saved in 595-finetuned-task2/checkpoint-70/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-70/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-70/preprocessor_config.json
+
+ 10%|█         | 71/700 [02:15<27:08,  2.59s/it]
+ 10%|█         | 72/700 [02:17<26:23,  2.52s/it]
+ 10%|█         | 73/700 [02:19<22:13,  2.13s/it]
+ 11%|█         | 74/700 [02:20<21:20,  2.05s/it]
+ 11%|█         | 75/700 [02:22<18:53,  1.81s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 11%|█         | 76/700 [02:23<17:16,  1.66s/it]
+ 11%|█         | 77/700 [02:24<16:02,  1.54s/it]
+ 11%|█         | 78/700 [02:27<19:59,  1.93s/it]
+ 11%|█▏        | 79/700 [02:30<24:28,  2.36s/it]
+ 11%|█▏        | 80/700 [02:32<21:34,  2.09s/it]
+                                                
+
+ 11%|█▏        | 80/700 [02:32<21:34,  2.09s/it]
+ 12%|█▏        | 81/700 [02:34<21:23,  2.07s/it]
+ 12%|█▏        | 82/700 [02:36<19:49,  1.93s/it]
+ 12%|█▏        | 83/700 [02:37<18:28,  1.80s/it]
+ 12%|█▏        | 84/700 [02:38<17:11,  1.67s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 3.5009381771087646, 'eval_accuracy': 0.3073170731707317, 'eval_runtime': 1.6189, 'eval_samples_per_second': 126.626, 'eval_steps_per_second': 4.324, 'epoch': 4.97}
+{'loss': 3.135, 'learning_rate': 4.9206349206349204e-05, 'epoch': 5.69}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.30it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  4.94it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  3.91it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  3.65it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  2.39it/s][A
+
+100%|██████████| 7/7 [00:02<00:00,  3.15it/s][A
+                                                
+
+                                             
+[A
+ 12%|█▏        | 84/700 [02:41<17:11,  1.67s/it]
+
+100%|██████████| 7/7 [00:02<00:00,  3.15it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-84
+Configuration saved in 595-finetuned-task2/checkpoint-84/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-84/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-84/preprocessor_config.json
+
+ 12%|█▏        | 85/700 [02:44<29:05,  2.84s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 12%|█▏        | 86/700 [02:45<24:50,  2.43s/it]
+ 12%|█▏        | 87/700 [02:47<21:40,  2.12s/it]
+ 13%|█▎        | 88/700 [02:48<19:26,  1.91s/it]
+ 13%|█▎        | 89/700 [02:50<17:39,  1.73s/it]
+ 13%|█▎        | 90/700 [02:51<16:15,  1.60s/it]
+                                                
+
+ 13%|█▎        | 90/700 [02:51<16:15,  1.60s/it]
+ 13%|█▎        | 91/700 [02:52<15:28,  1.53s/it]
+ 13%|█▎        | 92/700 [02:54<14:55,  1.47s/it]
+ 13%|█▎        | 93/700 [02:55<15:28,  1.53s/it]
+ 13%|█▎        | 94/700 [02:57<14:34,  1.44s/it]
+ 14%|█▎        | 95/700 [02:58<14:35,  1.45s/it]
+ 14%|█▎        | 96/700 [03:00<15:00,  1.49s/it]
+ 14%|█▍        | 97/700 [03:01<14:12,  1.41s/it]
+ 14%|█▍        | 98/700 [03:02<15:03,  1.50s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 2.7959580421447754, 'eval_accuracy': 0.36585365853658536, 'eval_runtime': 2.29, 'eval_samples_per_second': 89.52, 'eval_steps_per_second': 3.057, 'epoch': 5.97}
+{'loss': 2.5155, 'learning_rate': 4.841269841269841e-05, 'epoch': 6.41}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:02,  2.37it/s][A
+
+ 43%|████▎     | 3/7 [00:01<00:01,  2.89it/s][A
+
+ 57%|█████▋    | 4/7 [00:01<00:00,  3.10it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  3.41it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  3.76it/s][A
+                                                
+
+                                             
+[A
+ 14%|█▍        | 98/700 [03:05<15:03,  1.50s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  3.76it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-98
+Configuration saved in 595-finetuned-task2/checkpoint-98/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-98/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-98/preprocessor_config.json
+
+ 14%|█▍        | 99/700 [03:08<28:18,  2.83s/it]
+ 14%|█▍        | 100/700 [03:10<23:36,  2.36s/it]
+                                                 
+
+ 14%|█▍        | 100/700 [03:10<23:36,  2.36s/it]
+ 14%|█▍        | 101/700 [03:12<22:46,  2.28s/it]
+ 15%|█▍        | 102/700 [03:14<21:52,  2.19s/it]
+ 15%|█▍        | 103/700 [03:15<19:13,  1.93s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 15%|█▍        | 104/700 [03:16<17:13,  1.73s/it]
+ 15%|█▌        | 105/700 [03:18<15:51,  1.60s/it]
+ 15%|█▌        | 106/700 [03:19<16:15,  1.64s/it]
+ 15%|█▌        | 107/700 [03:21<16:47,  1.70s/it]
+ 15%|█▌        | 108/700 [03:23<15:35,  1.58s/it]
+ 16%|█▌        | 109/700 [03:24<14:55,  1.52s/it]
+ 16%|█▌        | 110/700 [03:25<14:07,  1.44s/it]
+                                                 
+
+ 16%|█▌        | 110/700 [03:25<14:07,  1.44s/it]
+ 16%|█▌        | 111/700 [03:27<13:56,  1.42s/it]
+ 16%|█▌        | 112/700 [03:28<13:58,  1.43s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 2.3143832683563232, 'eval_accuracy': 0.44878048780487806, 'eval_runtime': 2.1331, 'eval_samples_per_second': 96.104, 'eval_steps_per_second': 3.282, 'epoch': 6.97}
+{'loss': 2.0604, 'learning_rate': 4.761904761904762e-05, 'epoch': 7.14}
+{'loss': 1.6648, 'learning_rate': 4.682539682539683e-05, 'epoch': 7.83}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.33it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  4.93it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.06it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  3.91it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.02it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  4.89it/s][A
+                                                 
+
+                                             
+[A
+ 16%|█▌        | 112/700 [03:30<13:58,  1.43s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.89it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-112
+Configuration saved in 595-finetuned-task2/checkpoint-112/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-112/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-112/preprocessor_config.json
+
+ 16%|█▌        | 113/700 [03:34<26:03,  2.66s/it]
+ 16%|█▋        | 114/700 [03:35<22:47,  2.33s/it]
+ 16%|█▋        | 115/700 [03:36<19:51,  2.04s/it]
+ 17%|█▋        | 116/700 [03:38<17:44,  1.82s/it]
+ 17%|█▋        | 117/700 [03:39<16:37,  1.71s/it]
+ 17%|█▋        | 118/700 [03:41<15:25,  1.59s/it]
+ 17%|█▋        | 119/700 [03:42<14:28,  1.49s/it]
+ 17%|█▋        | 120/700 [03:43<14:20,  1.48s/it]
+                                                 
+
+ 17%|█▋        | 120/700 [03:43<14:20,  1.48s/it]
+ 17%|█▋        | 121/700 [03:45<16:25,  1.70s/it]
+ 17%|█▋        | 122/700 [03:47<15:21,  1.59s/it]
+ 18%|█▊        | 123/700 [03:48<14:27,  1.50s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 18%|█▊        | 124/700 [03:49<13:50,  1.44s/it]
+ 18%|█▊        | 125/700 [03:51<13:42,  1.43s/it]
+ 18%|█▊        | 126/700 [03:52<13:27,  1.41s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.9891878366470337, 'eval_accuracy': 0.47804878048780486, 'eval_runtime': 1.7631, 'eval_samples_per_second': 116.27, 'eval_steps_per_second': 3.97, 'epoch': 7.97}
+{'loss': 1.46, 'learning_rate': 4.603174603174603e-05, 'epoch': 8.55}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.63it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.26it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.38it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.25it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.36it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.29it/s][A
+                                                 
+
+                                             
+[A
+ 18%|█▊        | 126/700 [03:54<13:27,  1.41s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.29it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-126
+Configuration saved in 595-finetuned-task2/checkpoint-126/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-126/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-126/preprocessor_config.json
+
+ 18%|█▊        | 127/700 [03:58<25:34,  2.68s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 18%|█▊        | 128/700 [03:59<21:34,  2.26s/it]
+ 18%|█▊        | 129/700 [04:00<18:39,  1.96s/it]
+ 19%|█▊        | 130/700 [04:02<16:45,  1.76s/it]
+                                                 
+
+ 19%|█▊        | 130/700 [04:02<16:45,  1.76s/it]
+ 19%|█▊        | 131/700 [04:03<15:12,  1.60s/it]
+ 19%|█▉        | 132/700 [04:04<14:12,  1.50s/it]
+ 19%|█▉        | 133/700 [04:05<13:30,  1.43s/it]
+ 19%|█▉        | 134/700 [04:07<12:59,  1.38s/it]
+ 19%|█▉        | 135/700 [04:08<12:54,  1.37s/it]
+ 19%|█▉        | 136/700 [04:09<12:33,  1.34s/it]
+ 20%|█▉        | 137/700 [04:11<12:26,  1.33s/it]
+ 20%|█▉        | 138/700 [04:12<12:25,  1.33s/it]
+ 20%|█▉        | 139/700 [04:13<12:27,  1.33s/it]
+ 20%|██        | 140/700 [04:15<12:19,  1.32s/it]
+                                                 
+
+ 20%|██        | 140/700 [04:15<12:19,  1.32s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.8254998922348022, 'eval_accuracy': 0.47804878048780486, 'eval_runtime': 1.6291, 'eval_samples_per_second': 125.837, 'eval_steps_per_second': 4.297, 'epoch': 8.97}
+{'loss': 1.2936, 'learning_rate': 4.523809523809524e-05, 'epoch': 9.28}
+{'loss': 1.0278, 'learning_rate': 4.4444444444444447e-05, 'epoch': 9.97}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:01,  4.57it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  4.41it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.04it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.12it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.29it/s][A
+                                                 
+
+                                             
+[A
+ 20%|██        | 140/700 [04:18<12:19,  1.32s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.29it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-140
+Configuration saved in 595-finetuned-task2/checkpoint-140/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-140/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-140/preprocessor_config.json
+
+ 20%|██        | 141/700 [04:21<27:00,  2.90s/it]
+ 20%|██        | 142/700 [04:23<23:07,  2.49s/it]
+ 20%|██        | 143/700 [04:24<19:49,  2.14s/it]
+ 21%|██        | 144/700 [04:26<18:20,  1.98s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 21%|██        | 145/700 [04:27<16:26,  1.78s/it]
+ 21%|██        | 146/700 [04:28<15:11,  1.65s/it]
+ 21%|██        | 147/700 [04:29<14:04,  1.53s/it]
+ 21%|██        | 148/700 [04:32<15:37,  1.70s/it]
+ 21%|██▏       | 149/700 [04:33<14:25,  1.57s/it]
+ 21%|██▏       | 150/700 [04:34<13:36,  1.48s/it]
+                                                 
+
+ 21%|██▏       | 150/700 [04:34<13:36,  1.48s/it]
+ 22%|██▏       | 151/700 [04:35<13:01,  1.42s/it]
+ 22%|██▏       | 152/700 [04:37<12:21,  1.35s/it]
+ 22%|██▏       | 153/700 [04:38<12:07,  1.33s/it]
+ 22%|██▏       | 154/700 [04:39<11:57,  1.31s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.6982483863830566, 'eval_accuracy': 0.4975609756097561, 'eval_runtime': 2.3572, 'eval_samples_per_second': 86.969, 'eval_steps_per_second': 2.97, 'epoch': 9.97}
+{'loss': 0.9394, 'learning_rate': 4.3650793650793655e-05, 'epoch': 10.69}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.26it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  4.92it/s][A
+
+ 57%|█████▋    | 4/7 [00:01<00:00,  3.52it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  3.57it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  3.72it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  4.59it/s][A
+                                                 
+
+                                             
+[A
+ 22%|██▏       | 154/700 [04:42<11:57,  1.31s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.59it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-154
+Configuration saved in 595-finetuned-task2/checkpoint-154/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-154/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-154/preprocessor_config.json
+
+ 22%|██▏       | 155/700 [04:46<25:55,  2.85s/it]
+ 22%|██▏       | 156/700 [04:47<21:59,  2.43s/it]
+ 22%|██▏       | 157/700 [04:49<19:54,  2.20s/it]
+ 23%|██▎       | 158/700 [04:50<17:35,  1.95s/it]
+ 23%|██▎       | 159/700 [04:52<16:23,  1.82s/it]
+ 23%|██▎       | 160/700 [04:53<15:00,  1.67s/it]
+                                                 
+
+ 23%|██▎       | 160/700 [04:53<15:00,  1.67s/it]
+ 23%|██▎       | 161/700 [04:54<14:36,  1.63s/it]
+ 23%|██▎       | 162/700 [04:56<13:57,  1.56s/it]
+ 23%|██▎       | 163/700 [04:58<14:36,  1.63s/it]
+ 23%|██▎       | 164/700 [04:59<13:53,  1.55s/it]
+ 24%|██▎       | 165/700 [05:00<13:11,  1.48s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 24%|██▎       | 166/700 [05:02<12:51,  1.44s/it]
+ 24%|██▍       | 167/700 [05:03<12:30,  1.41s/it]
+ 24%|██▍       | 168/700 [05:04<12:13,  1.38s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.588908314704895, 'eval_accuracy': 0.5463414634146342, 'eval_runtime': 1.9295, 'eval_samples_per_second': 106.245, 'eval_steps_per_second': 3.628, 'epoch': 10.97}
+{'loss': 0.8781, 'learning_rate': 4.2857142857142856e-05, 'epoch': 11.41}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.78it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.26it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.29it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.19it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.27it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.18it/s][A
+                                                 
+
+                                             
+[A
+ 24%|██▍       | 168/700 [05:07<12:13,  1.38s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.18it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-168
+Configuration saved in 595-finetuned-task2/checkpoint-168/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-168/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-168/preprocessor_config.json
+
+ 24%|██▍       | 169/700 [05:10<23:17,  2.63s/it]
+ 24%|██▍       | 170/700 [05:11<19:49,  2.24s/it]
+                                                 
+
+ 24%|██▍       | 170/700 [05:11<19:49,  2.24s/it]
+ 24%|██▍       | 171/700 [05:12<17:15,  1.96s/it]
+ 25%|██▍       | 172/700 [05:14<15:38,  1.78s/it]
+ 25%|██▍       | 173/700 [05:15<14:31,  1.65s/it]
+ 25%|██▍       | 174/700 [05:17<13:55,  1.59s/it]
+ 25%|██▌       | 175/700 [05:18<13:10,  1.51s/it]
+ 25%|██▌       | 176/700 [05:19<12:38,  1.45s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 25%|██▌       | 177/700 [05:21<12:22,  1.42s/it]
+ 25%|██▌       | 178/700 [05:22<12:23,  1.42s/it]
+ 26%|██▌       | 179/700 [05:23<12:06,  1.39s/it]
+ 26%|██▌       | 180/700 [05:25<12:19,  1.42s/it]
+                                                 
+
+ 26%|██▌       | 180/700 [05:25<12:19,  1.42s/it]
+ 26%|██▌       | 181/700 [05:26<12:04,  1.40s/it]
+ 26%|██▌       | 182/700 [05:28<12:09,  1.41s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.5909909009933472, 'eval_accuracy': 0.5463414634146342, 'eval_runtime': 1.7034, 'eval_samples_per_second': 120.344, 'eval_steps_per_second': 4.109, 'epoch': 11.97}
+{'loss': 0.7825, 'learning_rate': 4.2063492063492065e-05, 'epoch': 12.14}
+{'loss': 0.6433, 'learning_rate': 4.126984126984127e-05, 'epoch': 12.83}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  5.28it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  4.39it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  3.90it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  3.92it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.09it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.01it/s][A
+                                                 
+
+                                             
+[A
+ 26%|██▌       | 182/700 [05:30<12:09,  1.41s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.01it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-182
+Configuration saved in 595-finetuned-task2/checkpoint-182/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-182/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-182/preprocessor_config.json
+/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 26%|██▌       | 183/700 [05:33<23:19,  2.71s/it]
+ 26%|██▋       | 184/700 [05:35<19:48,  2.30s/it]
+ 26%|██▋       | 185/700 [05:36<17:32,  2.04s/it]
+ 27%|██▋       | 186/700 [05:38<15:48,  1.84s/it]
+ 27%|██▋       | 187/700 [05:39<14:30,  1.70s/it]
+ 27%|██▋       | 188/700 [05:40<13:46,  1.62s/it]
+ 27%|██▋       | 189/700 [05:42<13:02,  1.53s/it]
+ 27%|██▋       | 190/700 [05:43<12:48,  1.51s/it]
+                                                 
+
+ 27%|██▋       | 190/700 [05:43<12:48,  1.51s/it]
+ 27%|██▋       | 191/700 [05:44<12:22,  1.46s/it]
+ 27%|██▋       | 192/700 [05:46<11:52,  1.40s/it]
+ 28%|██▊       | 193/700 [05:47<11:56,  1.41s/it]
+ 28%|██▊       | 194/700 [05:48<11:40,  1.38s/it]
+ 28%|██▊       | 195/700 [05:50<11:42,  1.39s/it]
+ 28%|██▊       | 196/700 [05:51<11:30,  1.37s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.5199946165084839, 'eval_accuracy': 0.5609756097560976, 'eval_runtime': 1.7743, 'eval_samples_per_second': 115.538, 'eval_steps_per_second': 3.945, 'epoch': 12.97}
+{'loss': 0.6725, 'learning_rate': 4.047619047619048e-05, 'epoch': 13.55}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.78it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.28it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.22it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.04it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.16it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.06it/s][A
+                                                 
+
+                                             
+[A
+ 28%|██▊       | 196/700 [05:54<11:30,  1.37s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.06it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-196
+Configuration saved in 595-finetuned-task2/checkpoint-196/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-196/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-196/preprocessor_config.json
+
+ 28%|██▊       | 197/700 [05:57<22:01,  2.63s/it]
+ 28%|██▊       | 198/700 [05:58<18:51,  2.25s/it]
+ 28%|██▊       | 199/700 [06:00<16:37,  1.99s/it]
+ 29%|██▊       | 200/700 [06:01<14:46,  1.77s/it]
+                                                 
+
+ 29%|██▊       | 200/700 [06:01<14:46,  1.77s/it]
+ 29%|██▊       | 201/700 [06:02<13:43,  1.65s/it]
+ 29%|██▉       | 202/700 [06:03<12:49,  1.55s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 29%|██▉       | 203/700 [06:05<12:22,  1.49s/it]
+ 29%|██▉       | 204/700 [06:06<12:03,  1.46s/it]
+ 29%|██▉       | 205/700 [06:08<11:50,  1.44s/it]
+ 29%|██▉       | 206/700 [06:09<11:28,  1.39s/it]
+ 30%|██▉       | 207/700 [06:10<11:17,  1.38s/it]
+ 30%|██▉       | 208/700 [06:11<10:58,  1.34s/it]
+ 30%|██▉       | 209/700 [06:13<11:09,  1.36s/it]
+ 30%|███       | 210/700 [06:14<11:09,  1.37s/it]
+                                                 
+
+ 30%|███       | 210/700 [06:14<11:09,  1.37s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4749077558517456, 'eval_accuracy': 0.5756097560975609, 'eval_runtime': 1.6901, 'eval_samples_per_second': 121.293, 'eval_steps_per_second': 4.142, 'epoch': 13.97}
+{'loss': 0.6038, 'learning_rate': 3.968253968253968e-05, 'epoch': 14.28}
+{'loss': 0.5433, 'learning_rate': 3.888888888888889e-05, 'epoch': 14.97}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.68it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.23it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.32it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.18it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.29it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.22it/s][A
+                                                 
+
+                                             
+[A
+ 30%|███       | 210/700 [06:17<11:09,  1.37s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.22it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-210
+Configuration saved in 595-finetuned-task2/checkpoint-210/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-210/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-210/preprocessor_config.json
+
+ 30%|███       | 211/700 [06:20<21:23,  2.62s/it]
+ 30%|███       | 212/700 [06:21<18:30,  2.28s/it]
+ 30%|███       | 213/700 [06:23<16:11,  2.00s/it]
+ 31%|███       | 214/700 [06:24<14:43,  1.82s/it]
+ 31%|███       | 215/700 [06:25<13:42,  1.70s/it]
+ 31%|███       | 216/700 [06:27<12:46,  1.58s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 31%|███       | 217/700 [06:28<12:21,  1.54s/it]
+ 31%|███       | 218/700 [06:29<11:41,  1.45s/it]
+ 31%|███▏      | 219/700 [06:31<11:26,  1.43s/it]
+ 31%|███▏      | 220/700 [06:32<11:10,  1.40s/it]
+                                                 
+
+ 31%|███▏      | 220/700 [06:32<11:10,  1.40s/it]
+ 32%|███▏      | 221/700 [06:33<10:58,  1.37s/it]
+ 32%|███▏      | 222/700 [06:35<10:53,  1.37s/it]
+ 32%|███▏      | 223/700 [06:36<11:01,  1.39s/it]
+ 32%|███▏      | 224/700 [06:38<10:47,  1.36s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4948962926864624, 'eval_accuracy': 0.5560975609756098, 'eval_runtime': 1.6614, 'eval_samples_per_second': 123.388, 'eval_steps_per_second': 4.213, 'epoch': 14.97}
+{'loss': 0.5145, 'learning_rate': 3.809523809523809e-05, 'epoch': 15.69}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.67it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.26it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.32it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.18it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.17it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.09it/s][A
+                                                 
+
+                                             
+[A
+ 32%|███▏      | 224/700 [06:40<10:47,  1.36s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.09it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-224
+Configuration saved in 595-finetuned-task2/checkpoint-224/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-224/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-224/preprocessor_config.json
+
+ 32%|███▏      | 225/700 [06:43<21:10,  2.68s/it]
+ 32%|███▏      | 226/700 [06:44<17:40,  2.24s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 32%|███▏      | 227/700 [06:46<15:33,  1.97s/it]
+ 33%|███▎      | 228/700 [06:47<14:07,  1.80s/it]
+ 33%|███▎      | 229/700 [06:49<13:10,  1.68s/it]
+ 33%|███▎      | 230/700 [06:50<12:34,  1.60s/it]
+                                                 
+
+ 33%|███▎      | 230/700 [06:50<12:34,  1.60s/it]
+ 33%|███▎      | 231/700 [06:51<12:02,  1.54s/it]
+ 33%|███▎      | 232/700 [06:53<11:41,  1.50s/it]
+ 33%|███▎      | 233/700 [06:54<11:20,  1.46s/it]
+ 33%|███▎      | 234/700 [06:55<10:52,  1.40s/it]
+ 34%|███▎      | 235/700 [06:57<10:52,  1.40s/it]
+ 34%|███▎      | 236/700 [06:58<10:38,  1.38s/it]
+ 34%|███▍      | 237/700 [06:59<10:21,  1.34s/it]
+ 34%|███▍      | 238/700 [07:01<10:06,  1.31s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4685603380203247, 'eval_accuracy': 0.5658536585365853, 'eval_runtime': 1.6772, 'eval_samples_per_second': 122.229, 'eval_steps_per_second': 4.174, 'epoch': 15.97}
+{'loss': 0.435, 'learning_rate': 3.730158730158731e-05, 'epoch': 16.41}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:01,  4.32it/s][A
+
+ 43%|████▎     | 3/7 [00:01<00:01,  2.17it/s][A
+
+ 57%|█████▋    | 4/7 [00:01<00:01,  2.34it/s][A
+
+ 71%|███████▏  | 5/7 [00:03<00:01,  1.29it/s][A
+
+ 86%|████████▌ | 6/7 [00:03<00:00,  1.70it/s][A
+                                                 
+
+                                             
+[A
+ 34%|███▍      | 238/700 [07:05<10:06,  1.31s/it]
+
+100%|██████████| 7/7 [00:03<00:00,  1.70it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-238
+Configuration saved in 595-finetuned-task2/checkpoint-238/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-238/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-238/preprocessor_config.json
+
+ 34%|███▍      | 239/700 [07:09<26:15,  3.42s/it]
+ 34%|███▍      | 240/700 [07:11<21:53,  2.85s/it]
+                                                 
+
+ 34%|███▍      | 240/700 [07:11<21:53,  2.85s/it]
+ 34%|███▍      | 241/700 [07:12<19:07,  2.50s/it]
+ 35%|███▍      | 242/700 [07:14<16:12,  2.12s/it]
+ 35%|███▍      | 243/700 [07:15<15:15,  2.00s/it]
+ 35%|███▍      | 244/700 [07:17<13:36,  1.79s/it]
+ 35%|███▌      | 245/700 [07:18<12:28,  1.64s/it]
+ 35%|███▌      | 246/700 [07:19<11:52,  1.57s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 35%|███▌      | 247/700 [07:21<11:24,  1.51s/it]
+ 35%|███▌      | 248/700 [07:22<10:58,  1.46s/it]
+ 36%|███▌      | 249/700 [07:24<11:18,  1.50s/it]
+ 36%|███▌      | 250/700 [07:26<12:40,  1.69s/it]
+                                                 
+
+ 36%|███▌      | 250/700 [07:26<12:40,  1.69s/it]
+ 36%|███▌      | 251/700 [07:27<12:09,  1.63s/it]
+ 36%|███▌      | 252/700 [07:29<11:56,  1.60s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4494175910949707, 'eval_accuracy': 0.5658536585365853, 'eval_runtime': 3.5749, 'eval_samples_per_second': 57.344, 'eval_steps_per_second': 1.958, 'epoch': 16.97}
+{'loss': 0.4408, 'learning_rate': 3.650793650793651e-05, 'epoch': 17.14}
+{'loss': 0.3729, 'learning_rate': 3.571428571428572e-05, 'epoch': 17.83}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.49it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.07it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.20it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.11it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.18it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.06it/s][A
+                                                 
+
+                                             
+[A
+ 36%|███▌      | 252/700 [07:31<11:56,  1.60s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.06it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-252
+Configuration saved in 595-finetuned-task2/checkpoint-252/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-252/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-252/preprocessor_config.json
+
+ 36%|███▌      | 253/700 [07:35<21:57,  2.95s/it]
+ 36%|███▋      | 254/700 [07:36<18:24,  2.48s/it]
+ 36%|███▋      | 255/700 [07:38<15:57,  2.15s/it]
+ 37%|███▋      | 256/700 [07:39<14:07,  1.91s/it]
+ 37%|███▋      | 257/700 [07:41<14:55,  2.02s/it]
+ 37%|███▋      | 258/700 [07:42<13:19,  1.81s/it]
+ 37%|███▋      | 259/700 [07:44<12:19,  1.68s/it]
+ 37%|███▋      | 260/700 [07:45<11:29,  1.57s/it]
+                                                 
+
+ 37%|███▋      | 260/700 [07:45<11:29,  1.57s/it]
+ 37%|███▋      | 261/700 [07:46<10:55,  1.49s/it]
+ 37%|███▋      | 262/700 [07:48<10:25,  1.43s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 38%|███▊      | 263/700 [07:49<10:03,  1.38s/it]
+ 38%|███▊      | 264/700 [07:50<10:03,  1.38s/it]
+ 38%|███▊      | 265/700 [07:52<09:43,  1.34s/it]
+ 38%|███▊      | 266/700 [07:53<09:38,  1.33s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4590449333190918, 'eval_accuracy': 0.5951219512195122, 'eval_runtime': 1.7091, 'eval_samples_per_second': 119.947, 'eval_steps_per_second': 4.096, 'epoch': 17.97}
+{'loss': 0.4159, 'learning_rate': 3.492063492063492e-05, 'epoch': 18.55}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  7.19it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.64it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.62it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.50it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.58it/s][A
+                                                 
+
+                                             
+[A
+ 38%|███▊      | 266/700 [07:55<09:38,  1.33s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.58it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-266
+Configuration saved in 595-finetuned-task2/checkpoint-266/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-266/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-266/preprocessor_config.json
+
+ 38%|███▊      | 267/700 [07:58<17:32,  2.43s/it]
+ 38%|███▊      | 268/700 [07:59<14:57,  2.08s/it]
+ 38%|███▊      | 269/700 [08:01<13:16,  1.85s/it]
+ 39%|███▊      | 270/700 [08:02<12:08,  1.69s/it]
+                                                 
+
+ 39%|███▊      | 270/700 [08:02<12:08,  1.69s/it]
+ 39%|███▊      | 271/700 [08:03<11:32,  1.61s/it]
+ 39%|███▉      | 272/700 [08:05<10:54,  1.53s/it]
+ 39%|███▉      | 273/700 [08:06<10:09,  1.43s/it]
+ 39%|███▉      | 274/700 [08:07<09:45,  1.37s/it]
+ 39%|███▉      | 275/700 [08:08<09:29,  1.34s/it]
+ 39%|███▉      | 276/700 [08:10<09:29,  1.34s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 40%|███▉      | 277/700 [08:11<09:21,  1.33s/it]
+ 40%|███▉      | 278/700 [08:12<09:15,  1.32s/it]
+ 40%|███▉      | 279/700 [08:13<09:03,  1.29s/it]
+ 40%|████      | 280/700 [08:15<09:03,  1.29s/it]
+                                                 
+
+ 40%|████      | 280/700 [08:15<09:03,  1.29s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4436622858047485, 'eval_accuracy': 0.5853658536585366, 'eval_runtime': 1.5513, 'eval_samples_per_second': 132.144, 'eval_steps_per_second': 4.512, 'epoch': 18.97}
+{'loss': 0.3722, 'learning_rate': 3.412698412698413e-05, 'epoch': 19.28}
+{'loss': 0.3242, 'learning_rate': 3.3333333333333335e-05, 'epoch': 19.97}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  7.21it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.58it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.61it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.47it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.58it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.53it/s][A
+                                                 
+
+                                             
+[A
+ 40%|████      | 280/700 [08:17<09:03,  1.29s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.53it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-280
+Configuration saved in 595-finetuned-task2/checkpoint-280/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-280/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-280/preprocessor_config.json
+
+ 40%|████      | 281/700 [08:20<17:33,  2.51s/it]
+ 40%|████      | 282/700 [08:22<15:24,  2.21s/it]
+ 40%|████      | 283/700 [08:23<13:25,  1.93s/it]
+ 41%|████      | 284/700 [08:24<11:58,  1.73s/it]
+ 41%|████      | 285/700 [08:25<10:59,  1.59s/it]
+ 41%|████      | 286/700 [08:27<10:34,  1.53s/it]
+ 41%|████      | 287/700 [08:28<09:51,  1.43s/it]
+ 41%|████      | 288/700 [08:31<12:32,  1.83s/it]
+ 41%|████▏     | 289/700 [08:32<11:36,  1.69s/it]
+ 41%|████▏     | 290/700 [08:34<10:55,  1.60s/it]
+                                                 
+
+ 41%|████▏     | 290/700 [08:34<10:55,  1.60s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 42%|████▏     | 291/700 [08:35<10:08,  1.49s/it]
+ 42%|████▏     | 292/700 [08:36<09:32,  1.40s/it]
+ 42%|████▏     | 293/700 [08:37<09:19,  1.37s/it]
+ 42%|████▏     | 294/700 [08:39<09:06,  1.35s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4489063024520874, 'eval_accuracy': 0.5951219512195122, 'eval_runtime': 1.56, 'eval_samples_per_second': 131.41, 'eval_steps_per_second': 4.487, 'epoch': 19.97}
+{'loss': 0.3069, 'learning_rate': 3.253968253968254e-05, 'epoch': 20.69}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.86it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.51it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.55it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.44it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.53it/s][A
+                                                 
+
+                                             
+[A
+ 42%|████▏     | 294/700 [08:42<09:06,  1.35s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.53it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-294
+Configuration saved in 595-finetuned-task2/checkpoint-294/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-294/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-294/preprocessor_config.json
+
+ 42%|████▏     | 295/700 [08:45<20:16,  3.00s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 42%|████▏     | 296/700 [08:47<16:39,  2.47s/it]
+ 42%|████▏     | 297/700 [08:48<14:15,  2.12s/it]
+ 43%|████▎     | 298/700 [08:49<12:30,  1.87s/it]
+ 43%|████▎     | 299/700 [08:51<11:14,  1.68s/it]
+ 43%|████▎     | 300/700 [08:52<10:29,  1.57s/it]
+                                                 
+
+ 43%|████▎     | 300/700 [08:52<10:29,  1.57s/it]
+ 43%|████▎     | 301/700 [08:53<09:49,  1.48s/it]
+ 43%|████▎     | 302/700 [08:55<10:25,  1.57s/it]
+ 43%|████▎     | 303/700 [08:56<10:10,  1.54s/it]
+ 43%|████▎     | 304/700 [08:58<10:17,  1.56s/it]
+ 44%|████▎     | 305/700 [09:00<10:26,  1.59s/it]
+ 44%|████▎     | 306/700 [09:01<09:45,  1.48s/it]
+ 44%|████▍     | 307/700 [09:02<09:21,  1.43s/it]
+ 44%|████▍     | 308/700 [09:04<09:22,  1.44s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.43606436252594, 'eval_accuracy': 0.6048780487804878, 'eval_runtime': 1.5755, 'eval_samples_per_second': 130.117, 'eval_steps_per_second': 4.443, 'epoch': 20.97}
+{'loss': 0.3365, 'learning_rate': 3.1746031746031745e-05, 'epoch': 21.41}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  5.24it/s][A
+
+ 43%|████▎     | 3/7 [00:01<00:02,  1.91it/s][A
+
+ 57%|█████▋    | 4/7 [00:01<00:01,  2.32it/s][A
+
+ 71%|███████▏  | 5/7 [00:03<00:01,  1.15it/s][A
+
+ 86%|████████▌ | 6/7 [00:03<00:00,  1.51it/s][A
+
+100%|██████████| 7/7 [00:03<00:00,  2.07it/s][A
+                                                 
+
+                                             
+[A
+ 44%|████▍     | 308/700 [09:09<09:22,  1.44s/it]
+
+100%|██████████| 7/7 [00:03<00:00,  2.07it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-308
+Configuration saved in 595-finetuned-task2/checkpoint-308/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-308/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-308/preprocessor_config.json
+
+ 44%|████▍     | 309/700 [09:12<22:50,  3.50s/it]
+ 44%|████▍     | 310/700 [09:13<18:42,  2.88s/it]
+                                                 
+
+ 44%|████▍     | 310/700 [09:13<18:42,  2.88s/it]
+ 44%|████▍     | 311/700 [09:15<15:42,  2.42s/it]
+ 45%|████▍     | 312/700 [09:16<13:25,  2.07s/it]
+ 45%|████▍     | 313/700 [09:17<12:05,  1.88s/it]
+ 45%|████▍     | 314/700 [09:19<11:26,  1.78s/it]
+ 45%|████▌     | 315/700 [09:20<10:36,  1.65s/it]
+ 45%|████▌     | 316/700 [09:22<10:32,  1.65s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 45%|████▌     | 317/700 [09:23<09:47,  1.53s/it]
+ 45%|████▌     | 318/700 [09:25<09:38,  1.51s/it]
+ 46%|████▌     | 319/700 [09:27<10:31,  1.66s/it]
+ 46%|████▌     | 320/700 [09:28<09:57,  1.57s/it]
+                                                 
+
+ 46%|████▌     | 320/700 [09:28<09:57,  1.57s/it]
+ 46%|████▌     | 321/700 [09:30<10:16,  1.63s/it]
+ 46%|████▌     | 322/700 [09:31<09:24,  1.49s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4757088422775269, 'eval_accuracy': 0.5853658536585366, 'eval_runtime': 3.9102, 'eval_samples_per_second': 52.427, 'eval_steps_per_second': 1.79, 'epoch': 21.97}
+{'loss': 0.3186, 'learning_rate': 3.095238095238095e-05, 'epoch': 22.14}
+{'loss': 0.286, 'learning_rate': 3.0158730158730158e-05, 'epoch': 22.83}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:01,  4.33it/s][A
+
+ 43%|████▎     | 3/7 [00:01<00:02,  1.58it/s][A
+
+ 57%|█████▋    | 4/7 [00:01<00:01,  2.00it/s][A
+
+ 71%|███████▏  | 5/7 [00:02<00:00,  2.45it/s][A
+
+ 86%|████████▌ | 6/7 [00:02<00:00,  2.92it/s][A
+
+100%|██████████| 7/7 [00:02<00:00,  3.78it/s][A
+                                                 
+
+                                             
+[A
+ 46%|████▌     | 322/700 [09:34<09:24,  1.49s/it]
+
+100%|██████████| 7/7 [00:02<00:00,  3.78it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-322
+Configuration saved in 595-finetuned-task2/checkpoint-322/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-322/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-322/preprocessor_config.json
+
+ 46%|████▌     | 323/700 [09:38<19:22,  3.08s/it]
+ 46%|████▋     | 324/700 [09:39<16:14,  2.59s/it]
+ 46%|████▋     | 325/700 [09:40<13:37,  2.18s/it]
+ 47%|████▋     | 326/700 [09:42<12:38,  2.03s/it]
+ 47%|████▋     | 327/700 [09:44<11:42,  1.88s/it]
+ 47%|████▋     | 328/700 [09:45<10:43,  1.73s/it]
+ 47%|████▋     | 329/700 [09:47<10:34,  1.71s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 47%|████▋     | 330/700 [09:48<09:41,  1.57s/it]
+                                                 
+
+ 47%|████▋     | 330/700 [09:48<09:41,  1.57s/it]
+ 47%|████▋     | 331/700 [09:49<09:27,  1.54s/it]
+ 47%|████▋     | 332/700 [09:51<08:53,  1.45s/it]
+ 48%|████▊     | 333/700 [09:52<09:13,  1.51s/it]
+ 48%|████▊     | 334/700 [09:55<10:33,  1.73s/it]
+ 48%|████▊     | 335/700 [09:56<09:44,  1.60s/it]
+ 48%|████▊     | 336/700 [09:57<09:07,  1.51s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4926899671554565, 'eval_accuracy': 0.5707317073170731, 'eval_runtime': 2.6978, 'eval_samples_per_second': 75.988, 'eval_steps_per_second': 2.595, 'epoch': 22.97}
+{'loss': 0.2976, 'learning_rate': 2.9365079365079366e-05, 'epoch': 23.55}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  7.19it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.33it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.49it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.41it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.52it/s][A
+                                                 
+
+                                             
+[A
+ 48%|████▊     | 336/700 [09:59<09:07,  1.51s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.52it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-336
+Configuration saved in 595-finetuned-task2/checkpoint-336/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-336/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-336/preprocessor_config.json
+/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 48%|████▊     | 337/700 [10:03<16:19,  2.70s/it]
+ 48%|████▊     | 338/700 [10:04<13:49,  2.29s/it]
+ 48%|████▊     | 339/700 [10:05<11:58,  1.99s/it]
+ 49%|████▊     | 340/700 [10:07<10:43,  1.79s/it]
+                                                 
+
+ 49%|████▊     | 340/700 [10:07<10:43,  1.79s/it]
+ 49%|████▊     | 341/700 [10:08<09:48,  1.64s/it]
+ 49%|████▉     | 342/700 [10:09<08:58,  1.50s/it]
+ 49%|████▉     | 343/700 [10:10<08:39,  1.46s/it]
+ 49%|████▉     | 344/700 [10:12<08:13,  1.39s/it]
+ 49%|████▉     | 345/700 [10:13<08:16,  1.40s/it]
+ 49%|████▉     | 346/700 [10:14<07:58,  1.35s/it]
+ 50%|████▉     | 347/700 [10:16<07:47,  1.33s/it]
+ 50%|████▉     | 348/700 [10:17<07:46,  1.33s/it]
+ 50%|████▉     | 349/700 [10:18<07:44,  1.32s/it]
+ 50%|█████     | 350/700 [10:19<07:38,  1.31s/it]
+                                                 
+
+ 50%|█████     | 350/700 [10:19<07:38,  1.31s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4906675815582275, 'eval_accuracy': 0.5951219512195122, 'eval_runtime': 1.5726, 'eval_samples_per_second': 130.354, 'eval_steps_per_second': 4.451, 'epoch': 23.97}
+{'loss': 0.2784, 'learning_rate': 2.857142857142857e-05, 'epoch': 24.28}
+{'loss': 0.2476, 'learning_rate': 2.777777777777778e-05, 'epoch': 24.97}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  7.18it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.65it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.65it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.47it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.53it/s][A
+                                                 
+
+                                             
+[A
+ 50%|█████     | 350/700 [10:22<07:38,  1.31s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.53it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-350
+Configuration saved in 595-finetuned-task2/checkpoint-350/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-350/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-350/preprocessor_config.json
+
+ 50%|█████     | 351/700 [10:25<15:00,  2.58s/it]
+ 50%|█████     | 352/700 [10:26<12:50,  2.21s/it]
+ 50%|█████     | 353/700 [10:28<11:09,  1.93s/it]
+ 51%|█████     | 354/700 [10:29<09:59,  1.73s/it]
+ 51%|█████     | 355/700 [10:30<09:15,  1.61s/it]
+ 51%|█████     | 356/700 [10:31<08:31,  1.49s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 51%|█████     | 357/700 [10:33<08:02,  1.41s/it]
+ 51%|█████     | 358/700 [10:34<07:47,  1.37s/it]
+ 51%|█████▏    | 359/700 [10:35<07:37,  1.34s/it]
+ 51%|█████▏    | 360/700 [10:36<07:28,  1.32s/it]
+                                                 
+
+ 51%|█████▏    | 360/700 [10:36<07:28,  1.32s/it]
+ 52%|█████▏    | 361/700 [10:38<07:19,  1.30s/it]
+ 52%|█████▏    | 362/700 [10:39<07:27,  1.33s/it]
+ 52%|█████▏    | 363/700 [10:40<07:20,  1.31s/it]
+ 52%|█████▏    | 364/700 [10:42<07:19,  1.31s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.450170874595642, 'eval_accuracy': 0.6048780487804878, 'eval_runtime': 1.5564, 'eval_samples_per_second': 131.713, 'eval_steps_per_second': 4.498, 'epoch': 24.97}
+{'loss': 0.2554, 'learning_rate': 2.6984126984126984e-05, 'epoch': 25.69}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  7.20it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.69it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.68it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.54it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.60it/s][A
+                                                 
+
+                                             
+[A
+ 52%|█████▏    | 364/700 [10:44<07:19,  1.31s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.60it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-364
+Configuration saved in 595-finetuned-task2/checkpoint-364/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-364/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-364/preprocessor_config.json
+
+ 52%|█████▏    | 365/700 [10:47<13:53,  2.49s/it]
+ 52%|█████▏    | 366/700 [10:48<11:49,  2.12s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 52%|█████▏    | 367/700 [10:50<10:28,  1.89s/it]
+ 53%|█████▎    | 368/700 [10:51<09:27,  1.71s/it]
+ 53%|█████▎    | 369/700 [10:52<08:51,  1.61s/it]
+ 53%|█████▎    | 370/700 [10:53<08:07,  1.48s/it]
+                                                 
+
+ 53%|█████▎    | 370/700 [10:53<08:07,  1.48s/it]
+ 53%|█████▎    | 371/700 [10:55<07:44,  1.41s/it]
+ 53%|█████▎    | 372/700 [10:56<07:25,  1.36s/it]
+ 53%|█████▎    | 373/700 [10:57<07:23,  1.36s/it]
+ 53%|█████▎    | 374/700 [10:58<07:11,  1.32s/it]
+ 54%|█████▎    | 375/700 [11:00<06:57,  1.28s/it]
+ 54%|█████▎    | 376/700 [11:01<06:59,  1.29s/it]
+ 54%|█████▍    | 377/700 [11:02<06:55,  1.29s/it]
+ 54%|█████▍    | 378/700 [11:04<06:55,  1.29s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.474592685699463, 'eval_accuracy': 0.5951219512195122, 'eval_runtime': 1.5416, 'eval_samples_per_second': 132.982, 'eval_steps_per_second': 4.541, 'epoch': 25.97}
+{'loss': 0.2362, 'learning_rate': 2.6190476190476192e-05, 'epoch': 26.41}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  7.09it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.64it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.63it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.48it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.57it/s][A
+                                                 
+
+                                             
+[A
+ 54%|█████▍    | 378/700 [11:06<06:55,  1.29s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.57it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-378
+Configuration saved in 595-finetuned-task2/checkpoint-378/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-378/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-378/preprocessor_config.json
+
+ 54%|█████▍    | 379/700 [11:09<13:41,  2.56s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 54%|█████▍    | 380/700 [11:10<11:42,  2.19s/it]
+                                                 
+
+ 54%|█████▍    | 380/700 [11:10<11:42,  2.19s/it]
+ 54%|█████▍    | 381/700 [11:12<10:12,  1.92s/it]
+ 55%|█████▍    | 382/700 [11:13<09:07,  1.72s/it]
+ 55%|█████▍    | 383/700 [11:14<08:21,  1.58s/it]
+ 55%|█████▍    | 384/700 [11:15<07:53,  1.50s/it]
+ 55%|█████▌    | 385/700 [11:17<07:26,  1.42s/it]
+ 55%|█████▌    | 386/700 [11:18<07:07,  1.36s/it]
+ 55%|█████▌    | 387/700 [11:19<07:02,  1.35s/it]
+ 55%|█████▌    | 388/700 [11:21<06:54,  1.33s/it]
+ 56%|█████▌    | 389/700 [11:22<06:49,  1.32s/it]
+ 56%|█████▌    | 390/700 [11:23<06:46,  1.31s/it]
+                                                 
+
+ 56%|█████▌    | 390/700 [11:23<06:46,  1.31s/it]
+ 56%|█████▌    | 391/700 [11:24<06:47,  1.32s/it]
+ 56%|█████▌    | 392/700 [11:26<06:41,  1.30s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4851583242416382, 'eval_accuracy': 0.5951219512195122, 'eval_runtime': 1.5517, 'eval_samples_per_second': 132.115, 'eval_steps_per_second': 4.511, 'epoch': 26.97}
+{'loss': 0.2315, 'learning_rate': 2.5396825396825397e-05, 'epoch': 27.14}
+{'loss': 0.2125, 'learning_rate': 2.4603174603174602e-05, 'epoch': 27.83}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  7.13it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.59it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.65it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.49it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.59it/s][A
+                                                 
+
+                                             
+[A
+ 56%|█████▌    | 392/700 [11:28<06:41,  1.30s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.59it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-392
+Configuration saved in 595-finetuned-task2/checkpoint-392/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-392/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-392/preprocessor_config.json
+
+ 56%|█████▌    | 393/700 [11:31<13:02,  2.55s/it]
+ 56%|█████▋    | 394/700 [11:32<11:01,  2.16s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 56%|█████▋    | 395/700 [11:34<09:42,  1.91s/it]
+ 57%|█████▋    | 396/700 [11:35<08:45,  1.73s/it]
+ 57%|█████▋    | 397/700 [11:36<07:58,  1.58s/it]
+ 57%|█████▋    | 398/700 [11:38<07:29,  1.49s/it]
+ 57%|█████▋    | 399/700 [11:39<07:13,  1.44s/it]
+ 57%|█████▋    | 400/700 [11:40<07:02,  1.41s/it]
+                                                 
+
+ 57%|█████▋    | 400/700 [11:40<07:02,  1.41s/it]
+ 57%|█████▋    | 401/700 [11:42<06:49,  1.37s/it]
+ 57%|█████▋    | 402/700 [11:43<06:35,  1.33s/it]
+ 58%|█████▊    | 403/700 [11:44<06:30,  1.32s/it]
+ 58%|█████▊    | 404/700 [11:45<06:27,  1.31s/it]
+ 58%|█████▊    | 405/700 [11:47<06:29,  1.32s/it]
+ 58%|█████▊    | 406/700 [11:48<06:23,  1.30s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4715805053710938, 'eval_accuracy': 0.6097560975609756, 'eval_runtime': 1.5486, 'eval_samples_per_second': 132.374, 'eval_steps_per_second': 4.52, 'epoch': 27.97}
+{'loss': 0.23, 'learning_rate': 2.380952380952381e-05, 'epoch': 28.55}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  7.12it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.56it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.56it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.43it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.52it/s][A
+                                                 
+
+                                             
+[A
+ 58%|█████▊    | 406/700 [11:50<06:23,  1.30s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.52it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-406
+Configuration saved in 595-finetuned-task2/checkpoint-406/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-406/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-406/preprocessor_config.json
+
+ 58%|█████▊    | 407/700 [11:54<12:40,  2.59s/it]
+ 58%|█████▊    | 408/700 [11:55<10:44,  2.21s/it]
+ 58%|█████▊    | 409/700 [11:56<09:24,  1.94s/it]
+ 59%|█████▊    | 410/700 [11:57<08:19,  1.72s/it]
+                                                 
+
+ 59%|█████▊    | 410/700 [11:57<08:19,  1.72s/it]
+ 59%|█████▊    | 411/700 [11:59<07:36,  1.58s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 59%|█████▉    | 412/700 [12:00<07:12,  1.50s/it]
+ 59%|█████▉    | 413/700 [12:01<06:47,  1.42s/it]
+ 59%|█████▉    | 414/700 [12:02<06:36,  1.39s/it]
+ 59%|█████▉    | 415/700 [12:04<06:23,  1.34s/it]
+ 59%|█████▉    | 416/700 [12:05<06:16,  1.33s/it]
+ 60%|█████▉    | 417/700 [12:06<06:10,  1.31s/it]
+ 60%|█████▉    | 418/700 [12:07<06:01,  1.28s/it]
+ 60%|█████▉    | 419/700 [12:09<06:05,  1.30s/it]
+ 60%|██████    | 420/700 [12:10<06:14,  1.34s/it]
+                                                 
+
+ 60%|██████    | 420/700 [12:10<06:14,  1.34s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4929566383361816, 'eval_accuracy': 0.6, 'eval_runtime': 1.5659, 'eval_samples_per_second': 130.912, 'eval_steps_per_second': 4.47, 'epoch': 28.97}
+{'loss': 0.2217, 'learning_rate': 2.3015873015873015e-05, 'epoch': 29.28}
+{'loss': 0.2156, 'learning_rate': 2.2222222222222223e-05, 'epoch': 29.97}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  7.20it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.67it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.64it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.50it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.59it/s][A
+                                                 
+
+                                             
+[A
+ 60%|██████    | 420/700 [12:12<06:14,  1.34s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.59it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-420
+Configuration saved in 595-finetuned-task2/checkpoint-420/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-420/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-420/preprocessor_config.json
+/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 60%|██████    | 421/700 [12:16<12:15,  2.64s/it]
+ 60%|██████    | 422/700 [12:17<10:36,  2.29s/it]
+ 60%|██████    | 423/700 [12:19<09:09,  1.98s/it]
+ 61%|██████    | 424/700 [12:20<08:03,  1.75s/it]
+ 61%|██████    | 425/700 [12:21<07:32,  1.65s/it]
+ 61%|██████    | 426/700 [12:23<06:59,  1.53s/it]
+ 61%|██████    | 427/700 [12:24<06:44,  1.48s/it]
+ 61%|██████    | 428/700 [12:25<06:26,  1.42s/it]
+ 61%|██████▏   | 429/700 [12:26<06:08,  1.36s/it]
+ 61%|██████▏   | 430/700 [12:28<05:58,  1.33s/it]
+                                                 
+
+ 61%|██████▏   | 430/700 [12:28<05:58,  1.33s/it]
+ 62%|██████▏   | 431/700 [12:29<05:55,  1.32s/it]
+ 62%|██████▏   | 432/700 [12:30<05:53,  1.32s/it]
+ 62%|██████▏   | 433/700 [12:32<05:52,  1.32s/it]
+ 62%|██████▏   | 434/700 [12:33<05:44,  1.30s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4511383771896362, 'eval_accuracy': 0.6048780487804878, 'eval_runtime': 1.5464, 'eval_samples_per_second': 132.567, 'eval_steps_per_second': 4.527, 'epoch': 29.97}
+{'loss': 0.1974, 'learning_rate': 2.1428571428571428e-05, 'epoch': 30.69}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  7.13it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.67it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.66it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.42it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.48it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.43it/s][A
+                                                 
+
+                                             
+[A
+ 62%|██████▏   | 434/700 [12:35<05:44,  1.30s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.43it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-434
+Configuration saved in 595-finetuned-task2/checkpoint-434/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-434/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-434/preprocessor_config.json
+
+ 62%|██████▏   | 435/700 [12:38<11:13,  2.54s/it]
+ 62%|██████▏   | 436/700 [12:40<09:51,  2.24s/it]
+ 62%|██████▏   | 437/700 [12:41<08:46,  2.00s/it]
+ 63%|██████▎   | 438/700 [12:43<08:07,  1.86s/it]
+ 63%|██████▎   | 439/700 [12:45<08:00,  1.84s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 63%|██████▎   | 440/700 [12:46<07:42,  1.78s/it]
+                                                 
+
+ 63%|██████▎   | 440/700 [12:46<07:42,  1.78s/it]
+ 63%|██████▎   | 441/700 [12:48<07:06,  1.65s/it]
+ 63%|██████▎   | 442/700 [12:49<06:43,  1.57s/it]
+ 63%|██████▎   | 443/700 [12:51<06:46,  1.58s/it]
+ 63%|██████▎   | 444/700 [12:52<06:29,  1.52s/it]
+ 64%|██████▎   | 445/700 [12:53<06:17,  1.48s/it]
+ 64%|██████▎   | 446/700 [12:55<06:06,  1.44s/it]
+ 64%|██████▍   | 447/700 [12:56<06:01,  1.43s/it]
+ 64%|██████▍   | 448/700 [12:57<05:56,  1.42s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.424970269203186, 'eval_accuracy': 0.6146341463414634, 'eval_runtime': 1.5668, 'eval_samples_per_second': 130.843, 'eval_steps_per_second': 4.468, 'epoch': 30.97}
+{'loss': 0.1996, 'learning_rate': 2.0634920634920636e-05, 'epoch': 31.41}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.60it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.29it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.31it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.19it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.26it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.20it/s][A
+                                                 
+
+                                             
+[A
+ 64%|██████▍   | 448/700 [13:00<05:56,  1.42s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.20it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-448
+Configuration saved in 595-finetuned-task2/checkpoint-448/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-448/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-448/preprocessor_config.json
+
+ 64%|██████▍   | 449/700 [13:03<10:51,  2.60s/it]
+ 64%|██████▍   | 450/700 [13:04<09:14,  2.22s/it]
+                                                 
+
+ 64%|██████▍   | 450/700 [13:04<09:14,  2.22s/it]
+ 64%|██████▍   | 451/700 [13:06<08:11,  1.97s/it]
+ 65%|██████▍   | 452/700 [13:07<07:19,  1.77s/it]
+ 65%|██████▍   | 453/700 [13:08<06:45,  1.64s/it]
+ 65%|██████▍   | 454/700 [13:09<06:16,  1.53s/it]
+ 65%|██████▌   | 455/700 [13:11<06:09,  1.51s/it]
+ 65%|██████▌   | 456/700 [13:12<06:01,  1.48s/it]
+ 65%|██████▌   | 457/700 [13:14<05:52,  1.45s/it]
+ 65%|██████▌   | 458/700 [13:15<05:40,  1.41s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 66%|██████▌   | 459/700 [13:16<05:40,  1.41s/it]
+ 66%|██████▌   | 460/700 [13:18<05:31,  1.38s/it]
+                                                 
+
+ 66%|██████▌   | 460/700 [13:18<05:31,  1.38s/it]
+ 66%|██████▌   | 461/700 [13:19<05:33,  1.39s/it]
+ 66%|██████▌   | 462/700 [13:21<05:35,  1.41s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4653674364089966, 'eval_accuracy': 0.6097560975609756, 'eval_runtime': 1.6657, 'eval_samples_per_second': 123.07, 'eval_steps_per_second': 4.202, 'epoch': 31.97}
+{'loss': 0.2075, 'learning_rate': 1.984126984126984e-05, 'epoch': 32.14}
+{'loss': 0.1967, 'learning_rate': 1.9047619047619046e-05, 'epoch': 32.83}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.75it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.30it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.33it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.19it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.28it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.20it/s][A
+                                                 
+
+                                             
+[A
+ 66%|██████▌   | 462/700 [13:23<05:35,  1.41s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.20it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-462
+Configuration saved in 595-finetuned-task2/checkpoint-462/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-462/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-462/preprocessor_config.json
+
+ 66%|██████▌   | 463/700 [13:26<10:30,  2.66s/it]
+ 66%|██████▋   | 464/700 [13:28<08:55,  2.27s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 66%|██████▋   | 465/700 [13:29<07:43,  1.97s/it]
+ 67%|██████▋   | 466/700 [13:30<06:53,  1.77s/it]
+ 67%|██████▋   | 467/700 [13:32<06:29,  1.67s/it]
+ 67%|██████▋   | 468/700 [13:33<06:10,  1.60s/it]
+ 67%|██████▋   | 469/700 [13:34<05:46,  1.50s/it]
+ 67%|██████▋   | 470/700 [13:36<05:36,  1.46s/it]
+                                                 
+
+ 67%|██████▋   | 470/700 [13:36<05:36,  1.46s/it]
+ 67%|██████▋   | 471/700 [13:37<05:25,  1.42s/it]
+ 67%|██████▋   | 472/700 [13:38<05:22,  1.41s/it]
+ 68%|██████▊   | 473/700 [13:40<05:22,  1.42s/it]
+ 68%|██████▊   | 474/700 [13:41<05:23,  1.43s/it]
+ 68%|██████▊   | 475/700 [13:43<05:13,  1.39s/it]
+ 68%|██████▊   | 476/700 [13:44<05:10,  1.38s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4908101558685303, 'eval_accuracy': 0.5951219512195122, 'eval_runtime': 1.6593, 'eval_samples_per_second': 123.546, 'eval_steps_per_second': 4.219, 'epoch': 32.97}
+{'loss': 0.1727, 'learning_rate': 1.8253968253968254e-05, 'epoch': 33.55}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.69it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.33it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.37it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  3.42it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  3.70it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  4.60it/s][A
+                                                 
+
+                                             
+[A
+ 68%|██████▊   | 476/700 [13:46<05:10,  1.38s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.60it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-476
+Configuration saved in 595-finetuned-task2/checkpoint-476/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-476/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-476/preprocessor_config.json
+
+ 68%|██████▊   | 477/700 [13:49<09:38,  2.59s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 68%|██████▊   | 478/700 [13:51<08:16,  2.24s/it]
+ 68%|██████▊   | 479/700 [13:52<07:16,  1.98s/it]
+ 69%|██████▊   | 480/700 [13:53<06:33,  1.79s/it]
+                                                 
+
+ 69%|██████▊   | 480/700 [13:53<06:33,  1.79s/it]
+ 69%|██████▊   | 481/700 [13:55<06:06,  1.67s/it]
+ 69%|██████▉   | 482/700 [13:56<05:44,  1.58s/it]
+ 69%|██████▉   | 483/700 [13:58<05:29,  1.52s/it]
+ 69%|██████▉   | 484/700 [13:59<05:20,  1.48s/it]
+ 69%|██████▉   | 485/700 [14:00<05:11,  1.45s/it]
+ 69%|██████▉   | 486/700 [14:02<05:09,  1.45s/it]
+ 70%|██████▉   | 487/700 [14:03<05:08,  1.45s/it]
+ 70%|██████▉   | 488/700 [14:05<05:01,  1.42s/it]
+ 70%|██████▉   | 489/700 [14:06<05:21,  1.52s/it]
+ 70%|███████   | 490/700 [14:08<05:10,  1.48s/it]
+                                                 
+
+ 70%|███████   | 490/700 [14:08<05:10,  1.48s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4612066745758057, 'eval_accuracy': 0.5902439024390244, 'eval_runtime': 1.815, 'eval_samples_per_second': 112.948, 'eval_steps_per_second': 3.857, 'epoch': 33.97}
+{'loss': 0.1831, 'learning_rate': 1.746031746031746e-05, 'epoch': 34.28}
+{'loss': 0.2066, 'learning_rate': 1.6666666666666667e-05, 'epoch': 34.97}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.73it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.28it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.31it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.18it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.27it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.18it/s][A
+                                                 
+
+                                             
+[A
+ 70%|███████   | 490/700 [14:10<05:10,  1.48s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.18it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-490
+Configuration saved in 595-finetuned-task2/checkpoint-490/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-490/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-490/preprocessor_config.json
+/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 70%|███████   | 491/700 [14:13<09:26,  2.71s/it]
+ 70%|███████   | 492/700 [14:15<08:02,  2.32s/it]
+ 70%|███████   | 493/700 [14:16<06:58,  2.02s/it]
+ 71%|███████   | 494/700 [14:18<06:20,  1.85s/it]
+ 71%|███████   | 495/700 [14:19<05:47,  1.70s/it]
+ 71%|███████   | 496/700 [14:20<05:21,  1.58s/it]
+ 71%|███████   | 497/700 [14:22<05:04,  1.50s/it]
+ 71%|███████   | 498/700 [14:23<04:51,  1.44s/it]
+ 71%|███████▏  | 499/700 [14:24<04:46,  1.42s/it]
+ 71%|███████▏  | 500/700 [14:26<04:41,  1.41s/it]
+                                                 
+
+ 71%|███████▏  | 500/700 [14:26<04:41,  1.41s/it]
+ 72%|███████▏  | 501/700 [14:27<04:32,  1.37s/it]
+ 72%|███████▏  | 502/700 [14:28<04:36,  1.40s/it]
+ 72%|███████▏  | 503/700 [14:30<04:33,  1.39s/it]
+ 72%|███████▏  | 504/700 [14:31<04:32,  1.39s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4257514476776123, 'eval_accuracy': 0.6195121951219512, 'eval_runtime': 1.66, 'eval_samples_per_second': 123.496, 'eval_steps_per_second': 4.217, 'epoch': 34.97}
+{'loss': 0.1806, 'learning_rate': 1.5873015873015872e-05, 'epoch': 35.69}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.63it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.23it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.33it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.19it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.26it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.18it/s][A
+                                                 
+
+                                             
+[A
+ 72%|███████▏  | 504/700 [14:33<04:32,  1.39s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.18it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-504
+Configuration saved in 595-finetuned-task2/checkpoint-504/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-504/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-504/preprocessor_config.json
+
+ 72%|███████▏  | 505/700 [14:37<08:46,  2.70s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 72%|███████▏  | 506/700 [14:38<07:26,  2.30s/it]
+ 72%|███████▏  | 507/700 [14:40<06:29,  2.02s/it]
+ 73%|███████▎  | 508/700 [14:41<05:53,  1.84s/it]
+ 73%|███████▎  | 509/700 [14:42<05:26,  1.71s/it]
+ 73%|███████▎  | 510/700 [14:44<05:01,  1.59s/it]
+                                                 
+
+ 73%|███████▎  | 510/700 [14:44<05:01,  1.59s/it]
+ 73%|███████▎  | 511/700 [14:45<04:49,  1.53s/it]
+ 73%|███████▎  | 512/700 [14:46<04:38,  1.48s/it]
+ 73%|███████▎  | 513/700 [14:48<04:24,  1.41s/it]
+ 73%|███████▎  | 514/700 [14:49<04:26,  1.43s/it]
+ 74%|███████▎  | 515/700 [14:50<04:16,  1.39s/it]
+ 74%|███████▎  | 516/700 [14:52<04:14,  1.39s/it]
+ 74%|███████▍  | 517/700 [14:53<04:20,  1.42s/it]
+ 74%|███████▍  | 518/700 [14:55<04:16,  1.41s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4678597450256348, 'eval_accuracy': 0.6, 'eval_runtime': 1.6625, 'eval_samples_per_second': 123.306, 'eval_steps_per_second': 4.21, 'epoch': 35.97}
+{'loss': 0.1658, 'learning_rate': 1.5079365079365079e-05, 'epoch': 36.41}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.77it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.25it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.25it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.16it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.23it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.15it/s][A
+                                                 
+
+                                             
+[A
+ 74%|███████▍  | 518/700 [14:57<04:16,  1.41s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.15it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-518
+Configuration saved in 595-finetuned-task2/checkpoint-518/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-518/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-518/preprocessor_config.json
+
+ 74%|███████▍  | 519/700 [14:59<07:06,  2.36s/it]
+ 74%|███████▍  | 520/700 [15:01<06:08,  2.05s/it]
+                                                 
+
+ 74%|███████▍  | 520/700 [15:01<06:08,  2.05s/it]
+ 74%|███████▍  | 521/700 [15:02<05:29,  1.84s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 75%|███████▍  | 522/700 [15:03<05:00,  1.69s/it]
+ 75%|███████▍  | 523/700 [15:05<04:39,  1.58s/it]
+ 75%|███████▍  | 524/700 [15:06<04:27,  1.52s/it]
+ 75%|███████▌  | 525/700 [15:07<04:22,  1.50s/it]
+ 75%|███████▌  | 526/700 [15:09<04:39,  1.61s/it]
+ 75%|███████▌  | 527/700 [15:11<04:26,  1.54s/it]
+ 75%|███████▌  | 528/700 [15:12<04:18,  1.51s/it]
+ 76%|███████▌  | 529/700 [15:14<04:17,  1.51s/it]
+ 76%|███████▌  | 530/700 [15:15<04:32,  1.60s/it]
+                                                 
+
+ 76%|███████▌  | 530/700 [15:15<04:32,  1.60s/it]
+ 76%|███████▌  | 531/700 [15:17<04:30,  1.60s/it]
+ 76%|███████▌  | 532/700 [15:18<04:15,  1.52s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.5083144903182983, 'eval_accuracy': 0.5804878048780487, 'eval_runtime': 1.6722, 'eval_samples_per_second': 122.594, 'eval_steps_per_second': 4.186, 'epoch': 36.97}
+{'loss': 0.2051, 'learning_rate': 1.4285714285714285e-05, 'epoch': 37.14}
+{'loss': 0.1462, 'learning_rate': 1.3492063492063492e-05, 'epoch': 37.83}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.70it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.24it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.31it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.20it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.25it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.18it/s][A
+                                                 
+
+                                             
+[A
+ 76%|███████▌  | 532/700 [15:21<04:15,  1.52s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.18it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-532
+Configuration saved in 595-finetuned-task2/checkpoint-532/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-532/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-532/preprocessor_config.json
+
+ 76%|███████▌  | 533/700 [15:24<07:45,  2.79s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 76%|███████▋  | 534/700 [15:26<06:31,  2.36s/it]
+ 76%|███████▋  | 535/700 [15:27<05:42,  2.08s/it]
+ 77%|███████▋  | 536/700 [15:28<05:02,  1.84s/it]
+ 77%|███████▋  | 537/700 [15:30<04:42,  1.73s/it]
+ 77%|███████▋  | 538/700 [15:31<04:26,  1.64s/it]
+ 77%|███████▋  | 539/700 [15:32<04:09,  1.55s/it]
+ 77%|███████▋  | 540/700 [15:34<03:59,  1.50s/it]
+                                                 
+
+ 77%|███████▋  | 540/700 [15:34<03:59,  1.50s/it]
+ 77%|███████▋  | 541/700 [15:35<03:51,  1.46s/it]
+ 77%|███████▋  | 542/700 [15:37<03:46,  1.43s/it]
+ 78%|███████▊  | 543/700 [15:38<03:42,  1.42s/it]
+ 78%|███████▊  | 544/700 [15:39<03:40,  1.41s/it]
+ 78%|███████▊  | 545/700 [15:41<03:31,  1.37s/it]
+ 78%|███████▊  | 546/700 [15:42<03:30,  1.36s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4822248220443726, 'eval_accuracy': 0.5853658536585366, 'eval_runtime': 1.6626, 'eval_samples_per_second': 123.3, 'eval_steps_per_second': 4.21, 'epoch': 37.97}
+{'loss': 0.1758, 'learning_rate': 1.2698412698412699e-05, 'epoch': 38.55}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.54it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.20it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.27it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.15it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.24it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.14it/s][A
+                                                 
+
+                                             
+[A
+ 78%|███████▊  | 546/700 [15:44<03:30,  1.36s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.14it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-546
+Configuration saved in 595-finetuned-task2/checkpoint-546/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-546/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-546/preprocessor_config.json
+
+ 78%|███████▊  | 547/700 [15:48<06:51,  2.69s/it]
+ 78%|███████▊  | 548/700 [15:49<05:47,  2.29s/it]
+ 78%|███████▊  | 549/700 [15:51<05:07,  2.03s/it]
+ 79%|███████▊  | 550/700 [15:52<04:44,  1.90s/it]
+                                                 
+
+ 79%|███████▊  | 550/700 [15:52<04:44,  1.90s/it]
+ 79%|███████▊  | 551/700 [15:53<04:18,  1.73s/it]
+ 79%|███████▉  | 552/700 [15:55<03:58,  1.61s/it]
+ 79%|███████▉  | 553/700 [15:56<03:44,  1.53s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 79%|███████▉  | 554/700 [15:57<03:33,  1.46s/it]
+ 79%|███████▉  | 555/700 [15:59<03:29,  1.45s/it]
+ 79%|███████▉  | 556/700 [16:00<03:23,  1.41s/it]
+ 80%|███████▉  | 557/700 [16:02<03:20,  1.40s/it]
+ 80%|███████▉  | 558/700 [16:03<03:15,  1.38s/it]
+ 80%|███████▉  | 559/700 [16:04<03:11,  1.36s/it]
+ 80%|████████  | 560/700 [16:06<03:10,  1.36s/it]
+                                                 
+
+ 80%|████████  | 560/700 [16:06<03:10,  1.36s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4328088760375977, 'eval_accuracy': 0.6048780487804878, 'eval_runtime': 1.6871, 'eval_samples_per_second': 121.507, 'eval_steps_per_second': 4.149, 'epoch': 38.97}
+{'loss': 0.1615, 'learning_rate': 1.1904761904761905e-05, 'epoch': 39.28}
+{'loss': 0.1753, 'learning_rate': 1.1111111111111112e-05, 'epoch': 39.97}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.68it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.21it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  3.87it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  3.91it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  3.97it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  4.89it/s][A
+                                                 
+
+                                             
+[A
+ 80%|████████  | 560/700 [16:08<03:10,  1.36s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.89it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-560
+Configuration saved in 595-finetuned-task2/checkpoint-560/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-560/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-560/preprocessor_config.json
+
+ 80%|████████  | 561/700 [16:11<06:18,  2.72s/it]
+ 80%|████████  | 562/700 [16:13<05:21,  2.33s/it]
+ 80%|████████  | 563/700 [16:14<04:39,  2.04s/it]
+ 81%|████████  | 564/700 [16:16<04:08,  1.83s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 81%|████████  | 565/700 [16:17<03:50,  1.71s/it]
+ 81%|████████  | 566/700 [16:18<03:36,  1.61s/it]
+ 81%|████████  | 567/700 [16:20<03:26,  1.55s/it]
+ 81%|████████  | 568/700 [16:21<03:19,  1.51s/it]
+ 81%|████████▏ | 569/700 [16:23<03:12,  1.47s/it]
+ 81%|████████▏ | 570/700 [16:24<03:09,  1.45s/it]
+                                                 
+
+ 81%|████████▏ | 570/700 [16:24<03:09,  1.45s/it]
+ 82%|████████▏ | 571/700 [16:25<03:04,  1.43s/it]
+ 82%|████████▏ | 572/700 [16:27<02:58,  1.39s/it]
+ 82%|████████▏ | 573/700 [16:28<02:53,  1.37s/it]
+ 82%|████████▏ | 574/700 [16:29<02:52,  1.37s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4688595533370972, 'eval_accuracy': 0.5804878048780487, 'eval_runtime': 1.7794, 'eval_samples_per_second': 115.211, 'eval_steps_per_second': 3.934, 'epoch': 39.97}
+{'loss': 0.1631, 'learning_rate': 1.0317460317460318e-05, 'epoch': 40.69}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.66it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:01,  3.24it/s][A
+
+ 57%|█████▋    | 4/7 [00:01<00:00,  3.27it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  3.48it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  3.73it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  4.63it/s][A
+                                                 
+
+                                             
+[A
+ 82%|████████▏ | 574/700 [16:32<02:52,  1.37s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.63it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-574
+Configuration saved in 595-finetuned-task2/checkpoint-574/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-574/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-574/preprocessor_config.json
+/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 82%|████████▏ | 575/700 [16:36<05:50,  2.81s/it]
+ 82%|████████▏ | 576/700 [16:37<04:54,  2.37s/it]
+ 82%|████████▏ | 577/700 [16:38<04:13,  2.06s/it]
+ 83%|████████▎ | 578/700 [16:40<03:44,  1.84s/it]
+ 83%|████████▎ | 579/700 [16:41<03:25,  1.70s/it]
+ 83%|████████▎ | 580/700 [16:42<03:08,  1.57s/it]
+                                                 
+
+ 83%|████████▎ | 580/700 [16:42<03:08,  1.57s/it]
+ 83%|████████▎ | 581/700 [16:44<02:56,  1.49s/it]
+ 83%|████████▎ | 582/700 [16:45<02:49,  1.44s/it]
+ 83%|████████▎ | 583/700 [16:46<02:45,  1.42s/it]
+ 83%|████████▎ | 584/700 [16:48<02:43,  1.41s/it]
+ 84%|████████▎ | 585/700 [16:49<02:38,  1.38s/it]
+ 84%|████████▎ | 586/700 [16:50<02:39,  1.40s/it]
+ 84%|████████▍ | 587/700 [16:52<02:37,  1.39s/it]
+ 84%|████████▍ | 588/700 [16:53<02:33,  1.37s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4859076738357544, 'eval_accuracy': 0.5902439024390244, 'eval_runtime': 1.9482, 'eval_samples_per_second': 105.225, 'eval_steps_per_second': 3.593, 'epoch': 40.97}
+{'loss': 0.1702, 'learning_rate': 9.523809523809523e-06, 'epoch': 41.41}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.68it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.27it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.32it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.20it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.28it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.20it/s][A
+                                                 
+
+                                             
+[A
+ 84%|████████▍ | 588/700 [16:55<02:33,  1.37s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.20it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-588
+Configuration saved in 595-finetuned-task2/checkpoint-588/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-588/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-588/preprocessor_config.json
+
+ 84%|████████▍ | 589/700 [16:58<04:18,  2.33s/it]
+ 84%|████████▍ | 590/700 [16:59<03:40,  2.01s/it]
+                                                 
+
+ 84%|████████▍ | 590/700 [16:59<03:40,  2.01s/it]
+ 84%|████████▍ | 591/700 [17:00<03:18,  1.82s/it]
+ 85%|████████▍ | 592/700 [17:01<02:57,  1.65s/it]
+ 85%|████████▍ | 593/700 [17:03<02:50,  1.59s/it]
+ 85%|████████▍ | 594/700 [17:04<02:41,  1.52s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 85%|████████▌ | 595/700 [17:06<02:33,  1.46s/it]
+ 85%|████████▌ | 596/700 [17:07<02:30,  1.45s/it]
+ 85%|████████▌ | 597/700 [17:08<02:27,  1.44s/it]
+ 85%|████████▌ | 598/700 [17:10<02:22,  1.40s/it]
+ 86%|████████▌ | 599/700 [17:11<02:20,  1.39s/it]
+ 86%|████████▌ | 600/700 [17:12<02:17,  1.38s/it]
+                                                 
+
+ 86%|████████▌ | 600/700 [17:12<02:17,  1.38s/it]
+ 86%|████████▌ | 601/700 [17:14<02:16,  1.38s/it]
+ 86%|████████▌ | 602/700 [17:15<02:14,  1.37s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.48309326171875, 'eval_accuracy': 0.5902439024390244, 'eval_runtime': 1.6552, 'eval_samples_per_second': 123.849, 'eval_steps_per_second': 4.229, 'epoch': 41.97}
+{'loss': 0.1625, 'learning_rate': 8.73015873015873e-06, 'epoch': 42.14}
+{'loss': 0.1463, 'learning_rate': 7.936507936507936e-06, 'epoch': 42.83}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.73it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.03it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.13it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.08it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.21it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.14it/s][A
+                                                 
+
+                                             
+[A
+ 86%|████████▌ | 602/700 [17:18<02:14,  1.37s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.14it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-602
+Configuration saved in 595-finetuned-task2/checkpoint-602/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-602/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-602/preprocessor_config.json
+
+ 86%|████████▌ | 603/700 [17:20<04:05,  2.53s/it]
+ 86%|████████▋ | 604/700 [17:22<03:31,  2.20s/it]
+ 86%|████████▋ | 605/700 [17:23<03:05,  1.95s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 87%|████████▋ | 606/700 [17:25<02:46,  1.77s/it]
+ 87%|████████▋ | 607/700 [17:26<02:31,  1.62s/it]
+ 87%|████████▋ | 608/700 [17:27<02:22,  1.55s/it]
+ 87%|████████▋ | 609/700 [17:29<02:15,  1.48s/it]
+ 87%|████████▋ | 610/700 [17:30<02:11,  1.46s/it]
+                                                 
+
+ 87%|████████▋ | 610/700 [17:30<02:11,  1.46s/it]
+ 87%|████████▋ | 611/700 [17:31<02:06,  1.42s/it]
+ 87%|████████▋ | 612/700 [17:33<02:04,  1.41s/it]
+ 88%|████████▊ | 613/700 [17:34<02:00,  1.38s/it]
+ 88%|████████▊ | 614/700 [17:35<01:57,  1.36s/it]
+ 88%|████████▊ | 615/700 [17:37<01:54,  1.35s/it]
+ 88%|████████▊ | 616/700 [17:38<01:54,  1.36s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.485545039176941, 'eval_accuracy': 0.5756097560975609, 'eval_runtime': 1.69, 'eval_samples_per_second': 121.298, 'eval_steps_per_second': 4.142, 'epoch': 42.97}
+{'loss': 0.1579, 'learning_rate': 7.142857142857143e-06, 'epoch': 43.55}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.65it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.07it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  3.94it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  3.96it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.09it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.01it/s][A
+                                                 
+
+                                             
+[A
+ 88%|████████▊ | 616/700 [17:40<01:54,  1.36s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.01it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-616
+Configuration saved in 595-finetuned-task2/checkpoint-616/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-616/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-616/preprocessor_config.json
+
+ 88%|████████▊ | 617/700 [17:44<03:55,  2.84s/it]
+ 88%|████████▊ | 618/700 [17:46<03:14,  2.37s/it]
+ 88%|████████▊ | 619/700 [17:47<02:46,  2.05s/it]
+ 89%|████████▊ | 620/700 [17:48<02:26,  1.84s/it]
+                                                 
+
+ 89%|████████▊ | 620/700 [17:48<02:26,  1.84s/it]
+ 89%|████████▊ | 621/700 [17:50<02:14,  1.70s/it]
+ 89%|████████▉ | 622/700 [17:51<02:04,  1.59s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 89%|████████▉ | 623/700 [17:53<02:07,  1.65s/it]
+ 89%|████████▉ | 624/700 [17:54<02:00,  1.58s/it]
+ 89%|████████▉ | 625/700 [17:56<01:54,  1.52s/it]
+ 89%|████████▉ | 626/700 [17:57<01:50,  1.50s/it]
+ 90%|████████▉ | 627/700 [17:58<01:45,  1.44s/it]
+ 90%|████████▉ | 628/700 [18:00<01:39,  1.39s/it]
+ 90%|████████▉ | 629/700 [18:01<01:36,  1.37s/it]
+ 90%|█████████ | 630/700 [18:02<01:35,  1.37s/it]
+                                                 
+
+ 90%|█████████ | 630/700 [18:02<01:35,  1.37s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4921534061431885, 'eval_accuracy': 0.5707317073170731, 'eval_runtime': 1.7267, 'eval_samples_per_second': 118.722, 'eval_steps_per_second': 4.054, 'epoch': 43.97}
+{'loss': 0.156, 'learning_rate': 6.349206349206349e-06, 'epoch': 44.28}
+{'loss': 0.1493, 'learning_rate': 5.555555555555556e-06, 'epoch': 44.97}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  6.97it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.52it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.27it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.22it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.36it/s][A
+                                                 
+
+                                             
+[A
+ 90%|█████████ | 630/700 [18:04<01:35,  1.37s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.36it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-630
+Configuration saved in 595-finetuned-task2/checkpoint-630/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-630/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-630/preprocessor_config.json
+
+ 90%|█████████ | 631/700 [18:08<03:07,  2.72s/it]
+ 90%|█████████ | 632/700 [18:09<02:34,  2.28s/it]
+ 90%|█████████ | 633/700 [18:11<02:14,  2.01s/it]
+ 91%|█████████ | 634/700 [18:12<01:57,  1.78s/it]
+ 91%|█████████ | 635/700 [18:13<01:45,  1.63s/it]
+ 91%|█████████ | 636/700 [18:15<01:37,  1.52s/it]
+ 91%|█████████ | 637/700 [18:16<01:33,  1.48s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 91%|█████████ | 638/700 [18:17<01:29,  1.44s/it]
+ 91%|█████████▏| 639/700 [18:18<01:23,  1.37s/it]
+ 91%|█████████▏| 640/700 [18:20<01:21,  1.36s/it]
+                                                 
+
+ 91%|█████████▏| 640/700 [18:20<01:21,  1.36s/it]
+ 92%|█████████▏| 641/700 [18:21<01:19,  1.34s/it]
+ 92%|█████████▏| 642/700 [18:22<01:16,  1.31s/it]
+ 92%|█████████▏| 643/700 [18:24<01:14,  1.30s/it]
+ 92%|█████████▏| 644/700 [18:25<01:13,  1.32s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4839956760406494, 'eval_accuracy': 0.5756097560975609, 'eval_runtime': 1.6211, 'eval_samples_per_second': 126.454, 'eval_steps_per_second': 4.318, 'epoch': 44.97}
+{'loss': 0.1336, 'learning_rate': 4.7619047619047615e-06, 'epoch': 45.69}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  7.19it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.66it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.61it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.49it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.57it/s][A
+                                                 
+
+                                             
+[A
+ 92%|█████████▏| 644/700 [18:27<01:13,  1.32s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.57it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-644
+Configuration saved in 595-finetuned-task2/checkpoint-644/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-644/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-644/preprocessor_config.json
+
+ 92%|█████████▏| 645/700 [18:31<02:25,  2.65s/it]
+ 92%|█████████▏| 646/700 [18:32<01:59,  2.22s/it]
+ 92%|█████████▏| 647/700 [18:33<01:44,  1.97s/it]
+ 93%|█████████▎| 648/700 [18:35<01:32,  1.78s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 93%|█████████▎| 649/700 [18:37<01:38,  1.94s/it]
+ 93%|█████████▎| 650/700 [18:38<01:26,  1.74s/it]
+                                                 
+
+ 93%|█████████▎| 650/700 [18:38<01:26,  1.74s/it]
+ 93%|█████████▎| 651/700 [18:40<01:20,  1.65s/it]
+ 93%|█████████▎| 652/700 [18:41<01:13,  1.52s/it]
+ 93%|█████████▎| 653/700 [18:42<01:08,  1.46s/it]
+ 93%|█████████▎| 654/700 [18:44<01:09,  1.52s/it]
+ 94%|█████████▎| 655/700 [18:45<01:04,  1.44s/it]
+ 94%|█████████▎| 656/700 [18:46<01:00,  1.38s/it]
+ 94%|█████████▍| 657/700 [18:48<00:57,  1.34s/it]
+ 94%|█████████▍| 658/700 [18:49<00:55,  1.32s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4806098937988281, 'eval_accuracy': 0.5804878048780487, 'eval_runtime': 1.5598, 'eval_samples_per_second': 131.429, 'eval_steps_per_second': 4.488, 'epoch': 45.97}
+{'loss': 0.1562, 'learning_rate': 3.968253968253968e-06, 'epoch': 46.41}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  7.04it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.57it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.49it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.32it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.44it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.40it/s][A
+                                                 
+
+                                             
+[A
+ 94%|█████████▍| 658/700 [18:51<00:55,  1.32s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.40it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-658
+Configuration saved in 595-finetuned-task2/checkpoint-658/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-658/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-658/preprocessor_config.json
+
+ 94%|█████████▍| 659/700 [18:54<01:38,  2.41s/it]
+ 94%|█████████▍| 660/700 [18:55<01:24,  2.11s/it]
+                                                 
+
+ 94%|█████████▍| 660/700 [18:55<01:24,  2.11s/it]
+ 94%|█████████▍| 661/700 [18:57<01:11,  1.84s/it]
+ 95%|█████████▍| 662/700 [18:58<01:04,  1.69s/it]
+ 95%|█████████▍| 663/700 [18:59<00:57,  1.56s/it]
+ 95%|█████████▍| 664/700 [19:00<00:52,  1.47s/it]
+ 95%|█████████▌| 665/700 [19:02<00:50,  1.43s/it]
+ 95%|█████████▌| 666/700 [19:03<00:47,  1.40s/it]
+ 95%|█████████▌| 667/700 [19:04<00:45,  1.37s/it]
+ 95%|█████████▌| 668/700 [19:06<00:43,  1.36s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 96%|█████████▌| 669/700 [19:07<00:41,  1.33s/it]
+ 96%|█████████▌| 670/700 [19:08<00:39,  1.32s/it]
+                                                 
+
+ 96%|█████████▌| 670/700 [19:08<00:39,  1.32s/it]
+ 96%|█████████▌| 671/700 [19:10<00:38,  1.32s/it]
+ 96%|█████████▌| 672/700 [19:11<00:38,  1.38s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4850584268569946, 'eval_accuracy': 0.5902439024390244, 'eval_runtime': 1.5876, 'eval_samples_per_second': 129.127, 'eval_steps_per_second': 4.409, 'epoch': 46.97}
+{'loss': 0.1356, 'learning_rate': 3.1746031746031746e-06, 'epoch': 47.14}
+{'loss': 0.1408, 'learning_rate': 2.3809523809523808e-06, 'epoch': 47.83}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  7.16it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.59it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.61it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.43it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.56it/s][A
+                                                 
+
+                                             
+[A
+ 96%|█████████▌| 672/700 [19:13<00:38,  1.38s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.56it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-672
+Configuration saved in 595-finetuned-task2/checkpoint-672/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-672/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-672/preprocessor_config.json
+
+ 96%|█████████▌| 673/700 [19:17<01:11,  2.66s/it]/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 96%|█████████▋| 674/700 [19:18<00:59,  2.27s/it]
+ 96%|█████████▋| 675/700 [19:19<00:49,  1.98s/it]
+ 97%|█████████▋| 676/700 [19:21<00:42,  1.77s/it]
+ 97%|█████████▋| 677/700 [19:22<00:37,  1.64s/it]
+ 97%|█████████▋| 678/700 [19:23<00:33,  1.52s/it]
+ 97%|█████████▋| 679/700 [19:25<00:30,  1.45s/it]
+ 97%|█████████▋| 680/700 [19:26<00:29,  1.46s/it]
+                                                 
+
+ 97%|█████████▋| 680/700 [19:26<00:29,  1.46s/it]
+ 97%|█████████▋| 681/700 [19:27<00:27,  1.42s/it]
+ 97%|█████████▋| 682/700 [19:29<00:25,  1.44s/it]
+ 98%|█████████▊| 683/700 [19:30<00:24,  1.45s/it]
+ 98%|█████████▊| 684/700 [19:32<00:23,  1.48s/it]
+ 98%|█████████▊| 685/700 [19:33<00:21,  1.46s/it]
+ 98%|█████████▊| 686/700 [19:35<00:19,  1.43s/it]
+ ***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.483282446861267, 'eval_accuracy': 0.5902439024390244, 'eval_runtime': 1.5635, 'eval_samples_per_second': 131.118, 'eval_steps_per_second': 4.477, 'epoch': 47.97}
+{'loss': 0.1454, 'learning_rate': 1.5873015873015873e-06, 'epoch': 48.55}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  7.09it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.61it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.60it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.48it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.59it/s][A
+
+100%|██████████| 7/7 [00:01<00:00,  5.55it/s][A
+                                                 
+
+                                             
+[A
+ 98%|█████████▊| 686/700 [19:37<00:19,  1.43s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  5.55it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-686
+Configuration saved in 595-finetuned-task2/checkpoint-686/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-686/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-686/preprocessor_config.json
+/home/yanfuguo/.local/lib/python3.9/site-packages/PIL/Image.py:979: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+
+ 98%|█████████▊| 687/700 [19:40<00:34,  2.67s/it]
+ 98%|█████████▊| 688/700 [19:41<00:27,  2.26s/it]
+ 98%|█████████▊| 689/700 [19:43<00:21,  1.96s/it]
+ 99%|█████████▊| 690/700 [19:44<00:17,  1.78s/it]
+                                                 
+
+ 99%|█████████▊| 690/700 [19:44<00:17,  1.78s/it]
+ 99%|█████████▊| 691/700 [19:45<00:14,  1.61s/it]
+ 99%|█████████▉| 692/700 [19:47<00:11,  1.49s/it]
+ 99%|█████████▉| 693/700 [19:48<00:10,  1.44s/it]
+ 99%|█████████▉| 694/700 [19:49<00:08,  1.39s/it]
+ 99%|█████████▉| 695/700 [19:50<00:06,  1.38s/it]
+ 99%|█████████▉| 696/700 [19:52<00:05,  1.40s/it]
+100%|█████████▉| 697/700 [19:53<00:04,  1.37s/it]
+100%|█████████▉| 698/700 [19:55<00:02,  1.35s/it]
+100%|█████████▉| 699/700 [19:56<00:01,  1.34s/it]
+100%|██████████| 700/700 [19:57<00:00,  1.33s/it]
+                                                 
+
+100%|██████████| 700/700 [19:57<00:00,  1.33s/it]***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4813770055770874, 'eval_accuracy': 0.5951219512195122, 'eval_runtime': 1.553, 'eval_samples_per_second': 132.005, 'eval_steps_per_second': 4.507, 'epoch': 48.97}
+{'loss': 0.1481, 'learning_rate': 7.936507936507937e-07, 'epoch': 49.28}
+{'loss': 0.1433, 'learning_rate': 0.0, 'epoch': 49.97}
+
+
+  0%|          | 0/7 [00:00<?, ?it/s][A
+
+ 29%|██▊       | 2/7 [00:00<00:00,  7.05it/s][A
+
+ 43%|████▎     | 3/7 [00:00<00:00,  5.62it/s][A
+
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.65it/s][A
+
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.49it/s][A
+
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.57it/s][A
+                                                 
+
+                                             
+[A
+100%|██████████| 700/700 [19:59<00:00,  1.33s/it]
+
+100%|██████████| 7/7 [00:01<00:00,  4.57it/s][A
+
+                                             [ASaving model checkpoint to 595-finetuned-task2/checkpoint-700
+Configuration saved in 595-finetuned-task2/checkpoint-700/config.json
+Model weights saved in 595-finetuned-task2/checkpoint-700/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/checkpoint-700/preprocessor_config.json
+
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+Loading best model from 595-finetuned-task2/checkpoint-490 (score: 0.6195121951219512).
+
+                                                 
+
+100%|██████████| 700/700 [20:00<00:00,  1.33s/it]
+100%|██████████| 700/700 [20:00<00:00,  1.72s/it]
+Saving model checkpoint to 595-finetuned-task2
+Configuration saved in 595-finetuned-task2/config.json
+Model weights saved in 595-finetuned-task2/pytorch_model.bin
+Feature extractor saved in 595-finetuned-task2/preprocessor_config.json
+***** Running Evaluation *****
+  Num examples = 205
+  Batch size = 32
+{'eval_loss': 1.4809470176696777, 'eval_accuracy': 0.6, 'eval_runtime': 1.5547, 'eval_samples_per_second': 131.858, 'eval_steps_per_second': 4.502, 'epoch': 49.97}
+{'train_runtime': 1200.9794, 'train_samples_per_second': 76.729, 'train_steps_per_second': 0.583, 'train_loss': 0.8879107357774462, 'epoch': 49.97}
+***** train metrics *****
+  epoch                    =      49.97
+  train_loss               =     0.8879
+  train_runtime            = 0:20:00.97
+  train_samples_per_second =     76.729
+  train_steps_per_second   =      0.583
+
+  0%|          | 0/7 [00:00<?, ?it/s]
+ 29%|██▊       | 2/7 [00:00<00:00,  7.16it/s]
+ 43%|████▎     | 3/7 [00:00<00:00,  5.66it/s]
+ 57%|█████▋    | 4/7 [00:00<00:00,  4.66it/s]
+ 71%|███████▏  | 5/7 [00:01<00:00,  4.49it/s]
+ 86%|████████▌ | 6/7 [00:01<00:00,  4.57it/s]
+100%|██████████| 7/7 [00:01<00:00,  5.53it/s]
+100%|██████████| 7/7 [00:01<00:00,  5.20it/s]
+***** eval metrics *****
+  epoch                   =      49.97
+  eval_accuracy           =     0.6195
+  eval_loss               =     1.4258
+  eval_runtime            = 0:00:01.55
+  eval_samples_per_second =    132.241
+  eval_steps_per_second   =      4.516
