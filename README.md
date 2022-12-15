@@ -1,3 +1,6 @@
+# Intro
+
+This is our final project for UMich EECS 595 Adv. NLP Fall 2022. 
 
 # Run on local machine
 
