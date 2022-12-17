@@ -6,7 +6,6 @@ from PIL import Image
 # If there's any corrpted image, PIL will raise OSError during training
 
 
-
 detaset_path = 'action_effect_images'
 
 for foldername in listdir(detaset_path):

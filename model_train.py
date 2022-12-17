@@ -117,14 +117,6 @@ def main():
 
     # # Preprocessing the data
 
-    # splits = dataset["train"].train_test_split(test_size=0.1)
-    # train_ds = splits['train']
-    # val_ds = splits['test']
-    # train_ds.set_transform(preprocess_train)
-    # val_ds.set_transform(preprocess_val)
-    # print("train_ds[0]:")
-    # print(train_ds[0])
-
     train_ds = dataset['train']
     val_ds = dataset['test']
 
